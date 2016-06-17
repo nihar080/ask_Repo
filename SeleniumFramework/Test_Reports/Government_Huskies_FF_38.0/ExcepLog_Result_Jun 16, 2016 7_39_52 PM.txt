@@ -1,0 +1,44 @@
+Exception Log : 
+================================================================================
+TestCase: Government_Create_Profile
+TestStep: 6
+Exception thrown from Keyword method : 
+Timeout waiting for Object: //*[@id='govtChangePasswordModal']/div/div/div/div/div[1]/button, whose FieldName is: close on Screen: Gov_Search
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'LH7U05CG5152DBF', ip: '10.193.240.82', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'
+Driver info: driver.version: unknown
+================================================================================
+
+================================================================================
+TestCase: Government_Create_Profile
+TestStep: 7
+Exception thrown from Keyword method : 
+Timeout waiting for Object: //a[text()='Government Maintenance'], whose FieldName is: maintenance on Screen: Gov_Search
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'LH7U05CG5152DBF', ip: '10.193.240.82', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'
+Driver info: driver.version: unknown
+================================================================================
+
+================================================================================
+TestCase: Government_Create_Profile
+TestStep: 8
+Exception thrown from Keyword method : 
+Timeout waiting for Object: //a[text()='Create Account Profile'], whose FieldName is: WL_Create_Profile on Screen: Gov_Search
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'LH7U05CG5152DBF', ip: '10.193.240.82', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'
+Driver info: driver.version: unknown
+================================================================================
+
+================================================================================
+TestCase: Government_Create_Profile
+TestStep: 9
+Exception thrown from Keyword method : 
+Timeout waiting for Object: //select[@id='reportAccess'], whose FieldName is: WD_SP_UI on Screen: Gov_Search
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.52.0', revision: '4c2593cfc3689a7fcd7be52549167e5ccc93ad28', time: '2016-02-11 11:22:43'
+System info: host: 'LH7U05CG5152DBF', ip: '10.193.240.82', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'
+Driver info: driver.version: unknown
+================================================================================

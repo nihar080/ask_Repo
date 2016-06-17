@@ -1,0 +1,177 @@
+Option Explicit
+
+' Code: Send E-mail without Security Warnings
+' OUTLOOK 2003 VBA CODE FOR 'ThisOutlookSession' MODULE
+' (c) 2005 Wayne Phillips (http://www.everythingaccess.com)
+' Written 07/05/2005
+' Last updated v1.4 - 26/03/2008
+'
+' Please read the full tutorial here:
+' http://www.everythingaccess.com/tutorials.asp?ID=112
+'
+' Please leave the copyright notices in place - Thank you.
+
+Private Sub Application_Startup()
+
+    'IGNORE - This forces the VBA project to open and be accessible
+    '         using automation at any point after startup
+    
+    'ThisOutlookSession.Session.Application.
+    
+
+End Sub
+
+' FnSendMailSafe
+' --------------
+' Simply sends an e-mail using Outlook/Simple MAPI.
+' Calling this function by Automation will prevent the warnings
+' 'A program is trying to send a mesage on your behalf...'
+' Also features optional HTML message body and attachments by file path.
+'
+' The To/CC/BCC/Attachments function parameters can contain multiple items
+' by seperating them with a semicolon. (e.g. for the strTo parameter,
+' 'test@test.com; test2@test.com' would be acceptable for sending to
+' multiple recipients.
+'
+Public Function FnSendMailSafe(strTo, _
+                                strCC, _
+                                strBCC, _
+                                strSubject, _
+                                strMessageBody, _
+                                Optional strAttachments) As Boolean
+
+' (c) 2005 Wayne Phillips - Written 07/05/2005
+' Last updated 26/03/2008 - Bugfix for empty recipient strings
+' http://www.everythingaccess.com
+'
+' You are free to use this code within your application(s)
+' as long as the copyright notice and this message remains intact.
+
+On Error GoTo ErrorHandler:
+
+    Dim MAPISession As Outlook.NameSpace
+    Dim MAPIFolder As Outlook.MAPIFolder
+    Dim MAPIMailItem As Outlook.MailItem
+    Dim oRecipient As Outlook.Recipient
+    
+    Dim TempArray() As String
+    Dim varArrayItem As Variant
+    Dim strEmailAddress As String
+    Dim strAttachmentPath As String
+    
+    Dim blnSuccessful As Boolean
+
+    'Get the MAPI NameSpace object
+    Set MAPISession = Application.Session
+    
+    If Not MAPISession Is Nothing Then
+
+      'Logon to the MAPI session
+      MAPISession.Logon , , True, False
+
+      'Create a pointer to the Outbox folder
+      Set MAPIFolder = MAPISession.GetDefaultFolder(olFolderOutbox)
+      If Not MAPIFolder Is Nothing Then
+
+        'Create a new mail item in the "Outbox" folder
+        Set MAPIMailItem = MAPIFolder.Items.Add(olMailItem)
+        If Not MAPIMailItem Is Nothing Then
+          
+          With MAPIMailItem
+
+            'Create the recipients TO
+                TempArray = Split(strTo, ";")
+                For Each varArrayItem In TempArray
+                
+                    strEmailAddress = Trim(varArrayItem)
+                    If Len(strEmailAddress) > 0 Then
+                        Set oRecipient = .Recipients.Add(strEmailAddress)
+                        oRecipient.Type = olTo
+                        Set oRecipient = Nothing
+                    End If
+                
+                Next varArrayItem
+            
+            'Create the recipients CC
+                TempArray = Split(strCC, ";")
+                For Each varArrayItem In TempArray
+                
+                    strEmailAddress = Trim(varArrayItem)
+                    If Len(strEmailAddress) > 0 Then
+                        Set oRecipient = .Recipients.Add(strEmailAddress)
+                        oRecipient.Type = olCC
+                        Set oRecipient = Nothing
+                    End If
+                
+                Next varArrayItem
+            
+            'Create the recipients BCC
+                TempArray = Split(strBCC, ";")
+                For Each varArrayItem In TempArray
+                
+                    strEmailAddress = Trim(varArrayItem)
+                    If Len(strEmailAddress) > 0 Then
+                        Set oRecipient = .Recipients.Add(strEmailAddress)
+                        oRecipient.Type = olBCC
+                        Set oRecipient = Nothing
+                    End If
+                
+                Next varArrayItem
+            
+            'Set the message SUBJECT
+                .Subject = strSubject
+            
+            'Set the message BODY (HTML or plain text)
+                If StrComp(Left(strMessageBody, 6), "<HTML>", _
+                            vbTextCompare) = 0 Then
+                    .HTMLBody = strMessageBody
+                Else
+                    .Body = strMessageBody
+                End If
+
+            'Add any specified attachments
+                TempArray = Split(strAttachments, ";")
+                For Each varArrayItem In TempArray
+                
+                    strAttachmentPath = Trim(varArrayItem)
+                    If Len(strAttachmentPath) > 0 Then
+                        .Attachments.Add strAttachmentPath
+                    End If
+                
+                Next varArrayItem
+
+            .Send 'The message will remain in the outbox if this fails
+
+            Set MAPIMailItem = Nothing
+            
+          End With
+
+        End If
+
+        Set MAPIFolder = Nothing
+      
+      End If
+
+      MAPISession.Logoff
+      
+    End If
+    
+    'If we got to here, then we shall assume everything went ok.
+    blnSuccessful = True
+    
+ExitRoutine:
+    Set MAPISession = Nothing
+    FnSendMailSafe = blnSuccessful
+    
+    Exit Function
+    
+ErrorHandler:
+    MsgBox "An error has occured in the user defined Outlook VBA function " & _
+            "FnSendMailSafe()" & vbCrLf & vbCrLf & _
+            "Error Number: " & CStr(Err.Number) & vbCrLf & _
+            "Error Description: " & Err.Description, _
+                vbApplicationModal + vbCritical
+    Resume ExitRoutine
+
+End Function
+
