@@ -26,7 +26,7 @@
 					<font fontName="Verdana" size="24" isBold="true" isItalic="false" isUnderline="true" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[Webservices AutomationTest Report]]></text>
+				<text><![CDATA[M&V Tricare UI Automation Report]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="10" y="65" width="151" height="24" forecolor="#990000"/>

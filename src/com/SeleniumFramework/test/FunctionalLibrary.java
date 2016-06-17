@@ -1156,6 +1156,7 @@ public class FunctionalLibrary extends ReportLibrary
 		
 			funBrowserclose();
 			driver.get(fValue_tmp);
+			driver.manage().window().maximize();
 			//driver.get("http://telugu.greatandhra.com/");
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			Thread.sleep(synctime);Thread.sleep(synctime);
