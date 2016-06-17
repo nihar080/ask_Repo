@@ -1,6 +1,0 @@
-Exception Log : 
-================================================================================
-TestCase: Government_Create_Profile
-TestStep: 3
-Exception from TestStep Function: null
-================================================================================
