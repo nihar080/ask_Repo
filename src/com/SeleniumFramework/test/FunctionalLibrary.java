@@ -2701,9 +2701,11 @@ public class FunctionalLibrary extends ReportLibrary
 	    {
 	      String[] columnNames = new String[]{"TCID", "TESTCASENAME", "RESULT","BROWSER","TESTSTAUS","TESTCOUNT","TPASS","TFAIL","TESTURL"};
 	      int[] columnIndexes = new int[]{0, 1, 2,3,4,5,6,7,8};
-	      ds = new JRXlsDataSource(JRLoader.getLocationInputStream(
+	      System.out.println(System.getProperty("user.dir"));
+			String url = System.getProperty("user.dir")+"/SeleniumFramework/Test_Excel/Tester.xls";
+	      ds = new JRXlsDataSource(JRLoader.getLocationInputStream(url
 //	    		  "C:\\CM_CBT_Automation\\SeleniumWebAutomationFramework\\Selenium_Framework\\SeleniumFramework\\Test_Excel\\Tester.xls"
-	    		  "SeleniumFramework\\Test_Excel\\Tester.xls"
+//	    		  "SeleniumFramework\\Test_Excel\\Tester.xls"
 	    		  ));
 
 	    
