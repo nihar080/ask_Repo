@@ -1,0 +1,18 @@
+{ "dbn": "10999000908",
+"sponsor":false,
+"userName":"bene0908",
+"loggedInUserDob":"2015-05-01",
+"loggedInUser":"Sandra",
+"data":[{
+"isChecked":false,
+"isDisabled":"",
+"isTerminated":"",
+"fName":"Taylor",
+"lName":"Sewalson",
+"fullNameDob":"1996-02-02",
+"dbn":"10999000900",
+"disabledMessage":"",
+"pegaRestrictionInd":""
+}
+]
+}

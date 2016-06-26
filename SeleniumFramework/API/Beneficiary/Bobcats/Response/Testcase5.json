@@ -1,0 +1,109 @@
+{
+    "type": "eligibilitySearchResponse",
+    "success": true,
+    "data":
+    [
+        {
+            "beneficiaryList":
+            [
+                {
+                    "healthCareCoverages":
+                    [
+                        {
+                            "effectiveEndDate": "12/31/2016",
+                            "effectiveStartDate": "01/01/2016",
+                            "hccMemberCategoryCode": "?",
+                            "hcdpPlanCoverageCode": "000",
+                            "terminationReasonCode": "1"
+                        },
+                        {
+                            "effectiveEndDate": "12/31/2015",
+                            "effectiveStartDate": "01/01/2015",
+                            "hccMemberCategoryCode": "?",
+                            "hcdpPlanCoverageCode": "106",
+                            "terminationReasonCode": "1"
+                        }
+                    ],
+                    "mailingAddress":
+                    {
+                        "addressTypeCode": "P",
+                        "city": "Tacoma",
+                        "countryCode": "US",
+                        "maintenanceSourceCode": "P",
+                        "qualityCode": "0",
+                        "startDate": "2012-01-15",
+                        "state": "WA",
+                        "street1": "3906 Cubilia Ave",
+                        "street2": "",
+                        "zip": "98401"
+                    },
+                    "personInfo":
+                    {
+                        "dateOfBirth": "04/04/1994",
+                        "dateOfDeath": "12/31/9999",
+                        "deersBeneficiaryId": "02",
+                        "deersFamilyId": "109990009",
+                        "firstName": "Nora",
+                        "gender": "F",
+                        "lastName": "Sewalson",
+                        "middleName": "Patricia",
+                        "nameSuffix": "",
+                        "patientIdentifier": "2999000902",
+                        "personIdentifier": "999000902",
+                        "personIdentifierTypeCode": "S"
+                    },
+                    "planCoverageDetails":
+                    [
+                        {
+                            "changeReason": "End of inquiry period",
+                            "changeReasonCode": "1",
+                            "dutyStatus": "",
+                            "eligibilityStatus": "Eligible",
+                            "endDate": "12/31/2016",
+                            "planOption": "No health care coverage plan",
+                            "startDate": "01/01/2016"
+                        },
+                        {
+                            "changeReason": "End of inquiry period",
+                            "changeReasonCode": "1",
+                            "dutyStatus": "",
+                            "eligibilityStatus": "Eligible",
+                            "endDate": "12/31/2015",
+                            "planOption": "TRICARE Prime Individual Coverage for Active Duty Sponsors",
+                            "startDate": "01/01/2015"
+                        }
+                    ],
+                    "primaryCareManagers":
+                    [
+                        {
+                            "city": "",
+                            "fullName": "MUNSTER, HERMAN",
+                            "fullPhone": "",
+                            "state": "",
+                            "street": "",
+                            "zip": ""
+                        }
+                    ]
+                }
+            ],
+            "sponsor":
+            {
+                "personInfo":
+                {
+                    "dateOfBirth": "02/02/1996",
+                    "dateOfDeath": "12/31/9999",
+                    "deersBeneficiaryId": "00",
+                    "deersFamilyId": "109990009",
+                    "firstName": "Taylor",
+                    "gender": "M",
+                    "lastName": "Sewalson",
+                    "middleName": "Weldon",
+                    "nameSuffix": "",
+                    "patientIdentifier": "2999000900",
+                    "personIdentifier": "999000900",
+                    "personIdentifierTypeCode": "S"
+                }
+            }
+        }
+    ]
+}
