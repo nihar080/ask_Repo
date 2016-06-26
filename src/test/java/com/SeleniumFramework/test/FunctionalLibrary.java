@@ -29,6 +29,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -219,60 +220,11 @@ public class FunctionalLibrary extends ReportLibrary {
 				APIheader = fValue;
 				break;
 			case GetAPIResponse:
-
-				String jPath = "";
-				for (String str : fValue.split("/")) {
-					jPath = jPath + "\\" + str;
-				}
-				String payloadPath = "SeleniumFramework\\API" + jPath;
-
-				HttpURLConnection httpURLConnection = null;
-				JSONObject requestJsonObject = new JSONObject(readFile(payloadPath));
-				HashMap<String, String> headerParameters = new HashMap<String, String>();
-				headerParameters.put(APIheader.split(":")[0], APIheader.split(":")[1]);
-				if (APImethod.equalsIgnoreCase("Post")) {
-					httpURLConnection = (HttpURLConnection) ConnectionHelper.createPostConnection(APIurl,
-							headerParameters);
-				} else if (APImethod.equalsIgnoreCase("Get")) {
-					httpURLConnection = (HttpURLConnection) ConnectionHelper.createGetConnection(APIurl,
-							headerParameters);
-				}
-				APIactualResponse = ResponseHelper.postResponseObject(httpURLConnection, requestJsonObject);
-				int responseCode = httpURLConnection.getResponseCode();
-
-				if (APIactualResponse.isEmpty() || responseCode != 200) {
-					System.out.println("Got no response for the API");
-					throw new Exception("Got no response for the API");
-				} else {
-					System.out.println("Got response for payload:");
-					System.out.println(requestJsonObject.toString());
-				}
-				httpURLConnection.disconnect();
+				getAPIresponse(fValue);
 				break;
 
 			case CheckAPIResponse:
-				String jsonPath = "";
-				for (String str : fValue.split("/")) {
-					jsonPath = jsonPath + "\\" + str;
-				}
-				String ExpectedJsonPath = "SeleniumFramework\\API" + jsonPath;
-				if (APIactualResponse.isEmpty()) {
-					System.out.println("No Response to compare. Seem the rest call failed");
-					throw new Exception("No Response to compare. Seem the rest call failed");
-				}
-				JSONObject expectedJson = new JSONObject(readFile(ExpectedJsonPath));
-				JSONObject actualJson = new JSONObject(APIactualResponse);
-
-				System.out.println("*************Actual Response************");
-				System.out.println(actualJson.toString());
-				System.out.println("*************Expected Response************");
-				System.out.println(expectedJson.toString());
-
-				if (!expectedJson.toString().equals(actualJson.toString())) {
-					System.out.println("Responses not matched");
-					throw new Exception("API response didn't matched to expected");
-				}
-
+				checkAPIresponse(fValue);
 				break;
 
 			case OpenURL:
@@ -2652,6 +2604,59 @@ public class FunctionalLibrary extends ReportLibrary {
 			return sb.toString();
 		} finally {
 			br.close();
+		}
+	}
+
+	public void getAPIresponse(String fValue) throws JSONException, Exception {
+		String jPath = "";
+		for (String str : fValue.split("/")) {
+			jPath = jPath + "\\" + str;
+		}
+		String payloadPath = "SeleniumFramework\\API" + jPath;
+
+		HttpURLConnection httpURLConnection = null;
+		JSONObject requestJsonObject = new JSONObject(readFile(payloadPath));
+		HashMap<String, String> headerParameters = new HashMap<String, String>();
+		headerParameters.put(APIheader.split(":")[0], APIheader.split(":")[1]);
+		if (APImethod.equalsIgnoreCase("Post")) {
+			httpURLConnection = (HttpURLConnection) ConnectionHelper.createPostConnection(APIurl, headerParameters);
+		} else if (APImethod.equalsIgnoreCase("Get")) {
+			httpURLConnection = (HttpURLConnection) ConnectionHelper.createGetConnection(APIurl, headerParameters);
+		}
+		APIactualResponse = ResponseHelper.postResponseObject(httpURLConnection, requestJsonObject);
+		int responseCode = httpURLConnection.getResponseCode();
+
+		if (APIactualResponse.isEmpty() || responseCode != 200) {
+			System.out.println("Got no response for the API");
+			throw new Exception("Got no response for the API");
+		} else {
+			System.out.println("Got response for payload:");
+			System.out.println(requestJsonObject.toString());
+		}
+		httpURLConnection.disconnect();
+	}
+
+	public void checkAPIresponse(String fValue) throws Exception {
+		String jsonPath = "";
+		for (String str : fValue.split("/")) {
+			jsonPath = jsonPath + "\\" + str;
+		}
+		String ExpectedJsonPath = "SeleniumFramework\\API" + jsonPath;
+		if (APIactualResponse.isEmpty()) {
+			System.out.println("No Response to compare. Seem the rest call failed");
+			throw new Exception("No Response to compare. Seem the rest call failed");
+		}
+		JSONObject expectedJson = new JSONObject(readFile(ExpectedJsonPath));
+		JSONObject actualJson = new JSONObject(APIactualResponse);
+
+		System.out.println("*************Actual Response************");
+		System.out.println(actualJson.toString());
+		System.out.println("*************Expected Response************");
+		System.out.println(expectedJson.toString());
+
+		if (!expectedJson.toString().equals(actualJson.toString())) {
+			System.out.println("Responses not matched");
+			throw new Exception("API response didn't matched to expected");
 		}
 	}
 
