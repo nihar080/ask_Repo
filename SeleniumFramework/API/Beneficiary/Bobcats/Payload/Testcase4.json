@@ -1,14 +1,15 @@
 {
-"beneDbn": "10999000902", 
-                    "data":[{
-                                "isChecked":true,
-                                "isDisabled":"",
-                                "isTerminated":"",
-                                "fName":"",
-                                "lName":"",
-                                "fullNameDob":"",
-                                "dbn":"10999000909",
-                                "disabledMessage":"",
-                                "pegaRestrictionInd":""
-                }]
+  "beneDbn": "10999000701",
+  "data":[{
+                "isChecked":false,
+                "isDisabled":"",
+                "isTerminated":"",
+                "fName":"",
+                "lName":"",
+                "fullNameDob":"",
+                "dbn":"10999000702",
+                "disabledMessage":"",
+                "pegaRestrictionInd":""
+            }
+        ]
 }

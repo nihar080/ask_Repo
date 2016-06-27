@@ -1,19 +1,36 @@
 
 
     {
-        "type": "oonProviderSearchResponse",
-        "error":
-        {
-            "code": 3,
-            "fieldErrors":
-            [
+        "type": "portalMemberContactPreferenceResponse",
+        "success": true,
+        "data":
+        [
+            {
+                "dbnid": "10999000600",
+                "documentDeliveryPreferenceList":
+                [
+                    {
+                        "alertPreference": "usMail",
+                        "documentTypeCode": ""
+                    }
+                ],
+                "messageText": "",
+                "minorDocDeliveryPreferenceList":
+                [
+                    {
+                        "dbnId": "",
+                        "preferences": "usMail"
+                    }
+                ],
+                "mobilePhoneNumber": "",
+                "portalRegEmail": "veeru11@optum.com",
+                "privacyRestrictionIndicator": "",
+                "statusInfo":
                 {
-                    "code": 3,
-                    "fieldName": "NODATA",
-                    "message": "No results found for the search criteria entered. Please refine your search."
+                    "serviceMessage": "SUCCESS",
+                    "serviceStatus": "SUCCESS"
                 }
-            ]
-        },
-        "success": false
+            }
+        ]
     }
 

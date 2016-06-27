@@ -1,1 +1,56 @@
-{ "beneficiaryDBN": "10999000901" }
+{
+"type": "privacyAccessEditResponse",
+"success": true,
+"data": [
+{
+"dbn": "10999000704",
+"disabledMessage": "",
+"fName": "Carter",
+"fullNameDob": "Carter Sewalson (xx/xx/1987)",
+"isChecked": false,
+"isDisabled": false,
+"isTerminated": false,
+"lName": "Sewalson"
+},
+{
+"dbn": "10999000703",
+"disabledMessage": "",
+"fName": "Jimmy",
+"fullNameDob": "Jimmy Sewalson (xx/xx/1989)",
+"isChecked": false,
+"isDisabled": false,
+"isTerminated": false,
+"lName": "Sewalson"
+},
+{
+"dbn": "10999000700",
+"disabledMessage": "",
+"fName": "Jorge",
+"fullNameDob": "Jorge Sewalson (xx/xx/1966)",
+"isChecked": false,
+"isDisabled": true,
+"isTerminated": false,
+"lName": "Sewalson"
+},
+{
+"dbn": "10999000706",
+"disabledMessage": "",
+"fName": "Katie",
+"fullNameDob": "Katie Sewalson (xx/xx/1970)",
+"isChecked": true,
+"isDisabled": false,
+"isTerminated": false,
+"lName": "Sewalson"
+},
+{
+"dbn": "10999000702",
+"disabledMessage": "Under 18",
+"fName": "Katrina",
+"fullNameDob": "Katrina Sewalson (xx/xx/2002)",
+"isChecked": false,
+"isDisabled": true,
+"isTerminated": false,
+"lName": "Sewalson"
+}
+]
+}

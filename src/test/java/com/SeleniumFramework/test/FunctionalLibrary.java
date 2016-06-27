@@ -491,7 +491,9 @@ public class FunctionalLibrary extends ReportLibrary {
 			}
 		} catch (Exception e) {
 			LOG_VAR = 0;
-			// testFlag="n";
+			// testFlag="n"
+			System.out.println("########## EXCEPTION OCCURED ############");
+			System.out.println(e.toString());
 			String newline = System.getProperty("line.separator");
 			String Trace = "Exception thrown from Keyword method : " + newline + e.getMessage();
 			sendLog(Trace, PREVIOUS_TEST_CASE, TEST_STEP_COUNT);
@@ -2642,7 +2644,7 @@ public class FunctionalLibrary extends ReportLibrary {
 			System.out.println(requestJsonObject.toString());
 		}
 		httpURLConnection.disconnect();
-//		APIheader.clear();
+		APIheader.clear();
 		headerParameters.clear();
 	}
 

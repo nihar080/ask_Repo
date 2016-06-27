@@ -1,87 +1,10 @@
-{
-    "type": "privacyAccessEditResponse",
-    "success": true,
-    "data":
-    [
-        {
-            "dbn": "10999000904",
-            "disabledMessage": "",
-            "fName": "Clark",
-            "fullNameDob": "Clark Sewalson (xx/xx/1995)",
-            "isChecked": true,
-            "isDisabled": false,
-            "isTerminated": true,
-            "lName": "Sewalson"
-        },
-        {
-            "dbn": "10999000909",
-            "disabledMessage": "",
-            "fName": "Irene",
-            "fullNameDob": "Irene Sewalson (xx/xx/1996)",
-            "isChecked": false,
-            "isDisabled": false,
-            "isTerminated": false,
-            "lName": "Sewalson"
-        },
-        {
-            "dbn": "10999000907",
-            "disabledMessage": "",
-            "fName": "Jack",
-            "fullNameDob": "Jack Sewalson (xx/xx/1995)",
-            "isChecked": false,
-            "isDisabled": false,
-            "isTerminated": false,
-            "lName": "Sewalson"
-        },
-        {
-            "dbn": "10999000906",
-            "disabledMessage": "",
-            "fName": "Mark",
-            "fullNameDob": "Mark Sewalson (xx/xx/1994)",
-            "isChecked": false,
-            "isDisabled": false,
-            "isTerminated": false,
-            "lName": "Sewalson"
-        },
-        {
-            "dbn": "10999000903",
-            "disabledMessage": "no coverage",
-            "fName": "Nicolas",
-            "fullNameDob": "Nicolas Sewalson (xx/xx/1994)",
-            "isChecked": false,
-            "isDisabled": true,
-            "isTerminated": true,
-            "lName": "Sewalson"
-        },
-        {
-            "dbn": "10999000902",
-            "disabledMessage": "",
-            "fName": "Nora",
-            "fullNameDob": "Nora Sewalson (xx/xx/1994)",
-            "isChecked": true,
-            "isDisabled": false,
-            "isTerminated": false,
-            "lName": "Sewalson"
-        },
-        {
-            "dbn": "10999000908",
-            "disabledMessage": "Under 18",
-            "fName": "Sandra",
-            "fullNameDob": "Sandra Sewalson (xx/xx/2015)",
-            "isChecked": false,
-            "isDisabled": true,
-            "isTerminated": false,
-            "lName": "Sewalson"
-        },
-        {
-            "dbn": "10999000900",
-            "disabledMessage": "",
-            "fName": "Taylor",
-            "fullNameDob": "Taylor Sewalson (xx/xx/1996)",
-            "isChecked": false,
-            "isDisabled": false,
-            "isTerminated": false,
-            "lName": "Sewalson"
-        }
-    ]
-}
+
+
+    {
+        "type": "privacyAccessEditResponse",
+        "success": true,
+        "data":
+        [
+        ]
+    }
+

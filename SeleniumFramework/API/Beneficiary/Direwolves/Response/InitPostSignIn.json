@@ -1,0 +1,11 @@
+{
+  "type": "authenticationServicesPostSignInResponse",
+  "success": true,
+  "data": [
+    {
+      "usernameVerified": true,
+      "authenticated": true,
+      "mustChangePassword": false
+    }
+  ]
+}

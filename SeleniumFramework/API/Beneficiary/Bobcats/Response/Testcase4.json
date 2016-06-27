@@ -1,13 +1,16 @@
-{
-    "type": "hideAccessSaveResponse",
-    "success": true,
-    "data":
-    [
-        {
-            "responseList":
-            [
-                ".5 - Hide privacy success 10999000909"
-            ]
-        }
-    ]
-}
+
+
+    {
+        "type": "hideAccessSaveResponse",
+        "success": true,
+        "data":
+        [
+            {
+                "responseList":
+                [
+                    ".6 - Unhide privacy success 10999000702"
+                ]
+            }
+        ]
+    }
+

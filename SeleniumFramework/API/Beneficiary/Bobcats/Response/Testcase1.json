@@ -1,4 +1,16 @@
 
 
-{"type":"hideAccessSaveResponse","success":true,"data":[{"responseList":[""]}]}
+    {
+        "type": "hideAccessSaveResponse",
+        "success": true,
+        "data":
+        [
+            {
+                "responseList":
+                [
+                    ".2 - Restrict privacy success 10999000702"
+                ]
+            }
+        ]
+    }
 
