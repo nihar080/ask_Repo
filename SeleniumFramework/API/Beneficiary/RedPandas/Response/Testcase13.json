@@ -1,0 +1,28 @@
+
+
+    {
+        "type": "eobMonthlyResponse",
+        "success": true,
+        "data":
+        [
+            {
+                "documentClass": "TRICARE.WEB.SUMMARYEOB",
+                "documentID": "v100-38374-38378-26489-EKC1-45FAAA-726677-268880-455895-234144-78-79-8-731-0-%5F%012150JBW04+00+00%01123456789%01%02%01KERMIT+D+FROG%0105%6127%6112%0115637%01TXWEOBT-V07+%01TXWEOBT-V07%011351097266",
+                "eobPostingMonth": "March",
+                "eobPostingYear": "2016"
+            },
+            {
+                "documentClass": "TRICARE.WEB.SUMMARYEOB",
+                "documentID": "v200-38374-38378-26489-EKC1-45FAAA-726677-268880-455895-234144-78-79-8-731-0-%5F%012150JBW04+00+00%01123456789%01%02%01KERMIT+D+FROG%0105%6127%6112%0115637%01TXWEOBT-V07+%01TXWEOBT-V07%011351097266",
+                "eobPostingMonth": "February",
+                "eobPostingYear": "2016"
+            },
+            {
+                "documentClass": "TRICARE.WEB.SUMMARYEOB",
+                "documentID": "v300-38374-38378-26489-EKC1-45FAAA-726677-268880-455895-234144-78-79-8-731-0-%5F%012150JBW04+00+00%01123456789%01%02%01KERMIT+D+FROG%0105%6127%6112%0115637%01TXWEOBT-V07+%01TXWEOBT-V07%011351097266",
+                "eobPostingMonth": "January",
+                "eobPostingYear": "2016"
+            }
+        ]
+    }
+

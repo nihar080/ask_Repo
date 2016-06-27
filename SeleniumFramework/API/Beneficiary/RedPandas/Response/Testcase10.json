@@ -1,0 +1,480 @@
+
+
+    {
+        "type": "eligibilitySearchResponse",
+        "success": true,
+        "data":
+        [
+            {
+                "beneficiaryList":
+                [
+                    {
+                        "healthCareCoverages":
+                        [
+                            {
+                                "effectiveEndDate": "08/01/2016",
+                                "effectiveStartDate": "08/01/2003",
+                                "hccMemberCategoryCode": "1",
+                                "hcdpPlanCoverageCode": "122",
+                                "terminationReasonCode": "E"
+                            }
+                        ],
+                        "mailingAddress":
+                        {
+                            "addressTypeCode": "P",
+                            "city": "BELLEVILLE",
+                            "countryCode": "US",
+                            "maintenanceSourceCode": "P",
+                            "qualityCode": "0",
+                            "startDate": "2000-04-01",
+                            "state": "NJ",
+                            "street1": "1313 MOCKINGBIRD LN",
+                            "street2": "",
+                            "street3": "",
+                            "zip": "07109"
+                        },
+                        "personInfo":
+                        {
+                            "dateOfBirth": "09/05/1950",
+                            "dateOfDeath": "12/31/9999",
+                            "deersBeneficiaryId": "01",
+                            "deersFamilyId": "109990003",
+                            "firstName": "Megan",
+                            "gender": "F",
+                            "lastName": "Warren",
+                            "middleName": "",
+                            "nameSuffix": "",
+                            "patientIdentifier": "2999000301",
+                            "personIdentifier": "999000301",
+                            "personIdentifierTypeCode": "S"
+                        },
+                        "planCoverageDetails":
+                        [
+                            {
+                                "changeReason": "Cancellation--record removed",
+                                "changeReasonCode": "E",
+                                "dutyStatus": "Transitional compensation not eligible for retirement",
+                                "eligibilityStatus": "Termed",
+                                "endDate": "08/01/2016",
+                                "planOption": "Continued Health Care Benefits Program Family Coverage",
+                                "startDate": "08/01/2003"
+                            }
+                        ],
+                        "primaryCareManagers":
+                        [
+                            {
+                                "city": "Denver",
+                                "fullName": "MUNSTER, HERMANN",
+                                "fullPhone": "(303) 999-8888",
+                                "state": "CO",
+                                "street": "1558 Green",
+                                "zip": "88046"
+                            }
+                        ]
+                    },
+                    {
+                        "healthCareCoverages":
+                        [
+                            {
+                                "effectiveEndDate": "08/01/2016",
+                                "effectiveStartDate": "04/01/2000",
+                                "hccMemberCategoryCode": "A",
+                                "hcdpPlanCoverageCode": "106",
+                                "terminationReasonCode": "1"
+                            }
+                        ],
+                        "mailingAddress":
+                        {
+                            "addressTypeCode": "P",
+                            "city": "BELLEVILLE",
+                            "countryCode": "US",
+                            "maintenanceSourceCode": "P",
+                            "qualityCode": "0",
+                            "startDate": "2000-04-01",
+                            "state": "NJ",
+                            "street1": "1313 MOCKINGBIRD LN",
+                            "street2": "",
+                            "street3": "",
+                            "zip": "07109"
+                        },
+                        "personInfo":
+                        {
+                            "dateOfBirth": "01/01/1985",
+                            "dateOfDeath": "12/31/9999",
+                            "deersBeneficiaryId": "00",
+                            "deersFamilyId": "109990003",
+                            "firstName": "Christopher",
+                            "gender": "M",
+                            "lastName": "Warren",
+                            "middleName": "",
+                            "nameSuffix": "",
+                            "patientIdentifier": "2999000300",
+                            "personIdentifier": "999000300",
+                            "personIdentifierTypeCode": "S"
+                        },
+                        "planCoverageDetails":
+                        [
+                            {
+                                "changeReason": "End of inquiry period",
+                                "changeReasonCode": "1",
+                                "dutyStatus": "Active duty",
+                                "eligibilityStatus": "Eligible",
+                                "endDate": "08/01/2016",
+                                "planOption": "TRICARE Prime Individual Coverage for Active Duty Sponsors",
+                                "startDate": "04/01/2000"
+                            }
+                        ],
+                        "primaryCareManagers":
+                        [
+                            {
+                                "city": "Denver",
+                                "fullName": "MUNSTER, HERMANN",
+                                "fullPhone": "(303) 999-8888",
+                                "state": "CO",
+                                "street": "1558 Green",
+                                "zip": "88046"
+                            }
+                        ]
+                    },
+                    {
+                        "healthCareCoverages":
+                        [
+                            {
+                                "effectiveEndDate": "08/01/2016",
+                                "effectiveStartDate": "08/01/2003",
+                                "hccMemberCategoryCode": "B",
+                                "hcdpPlanCoverageCode": "124",
+                                "terminationReasonCode": "N"
+                            }
+                        ],
+                        "mailingAddress":
+                        {
+                            "addressTypeCode": "P",
+                            "city": "BELLEVILLE",
+                            "countryCode": "US",
+                            "maintenanceSourceCode": "P",
+                            "qualityCode": "0",
+                            "startDate": "2000-04-01",
+                            "state": "NJ",
+                            "street1": "1313 MOCKINGBIRD LN",
+                            "street2": "",
+                            "street3": "",
+                            "zip": "07109"
+                        },
+                        "personInfo":
+                        {
+                            "dateOfBirth": "03/01/1997",
+                            "dateOfDeath": "12/31/9999",
+                            "deersBeneficiaryId": "02",
+                            "deersFamilyId": "109990003",
+                            "firstName": "Megan F.",
+                            "gender": "F",
+                            "lastName": "Warren",
+                            "middleName": "",
+                            "nameSuffix": "",
+                            "patientIdentifier": "2999000302",
+                            "personIdentifier": "999000302",
+                            "personIdentifierTypeCode": "S"
+                        },
+                        "planCoverageDetails":
+                        [
+                            {
+                                "changeReasonCode": "N",
+                                "dutyStatus": "Presidential Appointee",
+                                "eligibilityStatus": "Eligible",
+                                "endDate": "08/01/2016",
+                                "planOption": "Federal Employees Health Benefits Program (FEHBP) Family Standard Coverage",
+                                "startDate": "08/01/2003"
+                            }
+                        ],
+                        "primaryCareManagers":
+                        [
+                            {
+                                "city": "Denver",
+                                "fullName": "MUNSTER, HERMANN",
+                                "fullPhone": "(303) 999-8888",
+                                "state": "CO",
+                                "street": "1558 Green",
+                                "zip": "88046"
+                            }
+                        ]
+                    },
+                    {
+                        "healthCareCoverages":
+                        [
+                            {
+                                "effectiveEndDate": "08/01/2016",
+                                "effectiveStartDate": "08/01/2003",
+                                "hccMemberCategoryCode": "C",
+                                "hcdpPlanCoverageCode": "005",
+                                "terminationReasonCode": "D"
+                            }
+                        ],
+                        "mailingAddress":
+                        {
+                            "addressTypeCode": "P",
+                            "city": "BELLEVILLE",
+                            "countryCode": "US",
+                            "maintenanceSourceCode": "P",
+                            "qualityCode": "0",
+                            "startDate": "2000-04-01",
+                            "state": "NJ",
+                            "street1": "1313 MOCKINGBIRD LN",
+                            "street2": "",
+                            "street3": "",
+                            "zip": "07109"
+                        },
+                        "personInfo":
+                        {
+                            "dateOfBirth": "05/01/2000",
+                            "dateOfDeath": "12/31/9999",
+                            "deersBeneficiaryId": "03",
+                            "deersFamilyId": "109990003",
+                            "firstName": "Nathalie",
+                            "gender": "F",
+                            "lastName": "Warren",
+                            "middleName": "",
+                            "nameSuffix": "",
+                            "patientIdentifier": "2999000303",
+                            "personIdentifier": "999000303",
+                            "personIdentifierTypeCode": "S"
+                        },
+                        "planCoverageDetails":
+                        [
+                            {
+                                "changeReason": "Alignment for Final Policy Consolidation",
+                                "changeReasonCode": "D",
+                                "dutyStatus": "DoD civil service employee, except Presidential employee",
+                                "eligibilityStatus": "Termed",
+                                "endDate": "08/01/2016",
+                                "planOption": "TRICARE Standard for Survivors of Active Duty Deceased Sponsors",
+                                "startDate": "08/01/2003"
+                            }
+                        ],
+                        "primaryCareManagers":
+                        [
+                            {
+                                "city": "Denver",
+                                "fullName": "MUNSTER, HERMANN",
+                                "fullPhone": "(303) 999-8888",
+                                "state": "CO",
+                                "street": "1558 Green",
+                                "zip": "88046"
+                            }
+                        ]
+                    },
+                    {
+                        "healthCareCoverages":
+                        [
+                            {
+                                "effectiveEndDate": "08/01/2016",
+                                "effectiveStartDate": "06/01/2005",
+                                "hccMemberCategoryCode": "D",
+                                "hcdpPlanCoverageCode": "002",
+                                "terminationReasonCode": "8"
+                            }
+                        ],
+                        "mailingAddress":
+                        {
+                            "addressTypeCode": "P",
+                            "city": "BELLEVILLE",
+                            "countryCode": "US",
+                            "maintenanceSourceCode": "P",
+                            "qualityCode": "0",
+                            "startDate": "2000-04-01",
+                            "state": "NJ",
+                            "street1": "1313 MOCKINGBIRD LN",
+                            "street2": "",
+                            "street3": "",
+                            "zip": "07109"
+                        },
+                        "personInfo":
+                        {
+                            "dateOfBirth": "06/01/2005",
+                            "dateOfDeath": "12/31/9999",
+                            "deersBeneficiaryId": "04",
+                            "deersFamilyId": "109990003",
+                            "firstName": "June",
+                            "gender": "M",
+                            "lastName": "Warren",
+                            "middleName": "",
+                            "nameSuffix": "",
+                            "patientIdentifier": "2999000304",
+                            "personIdentifier": "999000304",
+                            "personIdentifierTypeCode": "S"
+                        },
+                        "planCoverageDetails":
+                        [
+                            {
+                                "changeReason": "Loss of eligibility for this coverage due to family association",
+                                "changeReasonCode": "8",
+                                "dutyStatus": "Disabled American veteran",
+                                "eligibilityStatus": "Termed",
+                                "endDate": "08/01/2016",
+                                "planOption": "Direct Care for Active Duty Family Members",
+                                "startDate": "06/01/2005"
+                            }
+                        ],
+                        "primaryCareManagers":
+                        [
+                            {
+                                "city": "Denver",
+                                "fullName": "MUNSTER, HERMANN",
+                                "fullPhone": "(303) 999-8888",
+                                "state": "CO",
+                                "street": "1558 Green",
+                                "zip": "88046"
+                            }
+                        ]
+                    },
+                    {
+                        "healthCareCoverages":
+                        [
+                            {
+                                "effectiveEndDate": "08/01/2016",
+                                "effectiveStartDate": "07/01/2010",
+                                "hccMemberCategoryCode": "H",
+                                "hcdpPlanCoverageCode": "002",
+                                "terminationReasonCode": "D"
+                            }
+                        ],
+                        "mailingAddress":
+                        {
+                            "addressTypeCode": "P",
+                            "city": "BELLEVILLE",
+                            "countryCode": "US",
+                            "maintenanceSourceCode": "P",
+                            "qualityCode": "0",
+                            "startDate": "2000-04-01",
+                            "state": "NJ",
+                            "street1": "1313 MOCKINGBIRD LN",
+                            "street2": "",
+                            "street3": "",
+                            "zip": "07109"
+                        },
+                        "personInfo":
+                        {
+                            "dateOfBirth": "07/01/2010",
+                            "dateOfDeath": "12/31/9999",
+                            "deersBeneficiaryId": "05",
+                            "deersFamilyId": "109990003",
+                            "firstName": "Gwen",
+                            "gender": "M",
+                            "lastName": "Warren",
+                            "middleName": "",
+                            "nameSuffix": "",
+                            "patientIdentifier": "2999000305",
+                            "personIdentifier": "999000305",
+                            "personIdentifierTypeCode": "S"
+                        },
+                        "planCoverageDetails":
+                        [
+                            {
+                                "changeReason": "Alignment for Final Policy Consolidation",
+                                "changeReasonCode": "D",
+                                "dutyStatus": "Medal of Honor recipient",
+                                "eligibilityStatus": "Termed",
+                                "endDate": "08/01/2016",
+                                "planOption": "Direct Care for Active Duty Family Members",
+                                "startDate": "07/01/2010"
+                            }
+                        ],
+                        "primaryCareManagers":
+                        [
+                            {
+                                "city": "Denver",
+                                "fullName": "MUNSTER, HERMANN",
+                                "fullPhone": "(303) 999-8888",
+                                "state": "CO",
+                                "street": "1558 Green",
+                                "zip": "88046"
+                            }
+                        ]
+                    },
+                    {
+                        "healthCareCoverages":
+                        [
+                            {
+                                "effectiveEndDate": "08/01/2016",
+                                "effectiveStartDate": "08/01/2015",
+                                "hccMemberCategoryCode": "Z",
+                                "hcdpPlanCoverageCode": "120",
+                                "terminationReasonCode": "Q"
+                            }
+                        ],
+                        "mailingAddress":
+                        {
+                            "addressTypeCode": "P",
+                            "city": "BELLEVILLE",
+                            "countryCode": "US",
+                            "maintenanceSourceCode": "P",
+                            "qualityCode": "0",
+                            "startDate": "2000-04-01",
+                            "state": "NJ",
+                            "street1": "1313 MOCKINGBIRD LN",
+                            "street2": "",
+                            "street3": "",
+                            "zip": "07109"
+                        },
+                        "personInfo":
+                        {
+                            "dateOfBirth": "08/01/2015",
+                            "dateOfDeath": "12/31/9999",
+                            "deersBeneficiaryId": "06",
+                            "deersFamilyId": "109990003",
+                            "firstName": "Baby84842",
+                            "gender": "M",
+                            "lastName": "Warren",
+                            "middleName": "",
+                            "nameSuffix": "",
+                            "patientIdentifier": "2999000306",
+                            "personIdentifier": "999000306",
+                            "personIdentifierTypeCode": "S"
+                        },
+                        "planCoverageDetails":
+                        [
+                            {
+                                "changeReason": "The date is certain (Projected end of eligibility)",
+                                "changeReasonCode": "Q",
+                                "dutyStatus": "Unknown",
+                                "eligibilityStatus": "Eligible",
+                                "endDate": "08/01/2016",
+                                "planOption": "TRICARE Senior Prime Individual Coverage for Retired Sponsors and Family Members",
+                                "startDate": "08/01/2015"
+                            }
+                        ],
+                        "primaryCareManagers":
+                        [
+                            {
+                                "city": "Denver",
+                                "fullName": "MUNSTER, HERMANN",
+                                "fullPhone": "(303) 999-8888",
+                                "state": "CO",
+                                "street": "1558 Green",
+                                "zip": "88046"
+                            }
+                        ]
+                    }
+                ],
+                "sponsor":
+                {
+                    "personInfo":
+                    {
+                        "dateOfBirth": "01/01/1985",
+                        "dateOfDeath": "12/31/9999",
+                        "deersBeneficiaryId": "00",
+                        "deersFamilyId": "100001052",
+                        "firstName": "Christopher",
+                        "gender": "M",
+                        "lastName": "Warren",
+                        "middleName": "",
+                        "nameSuffix": "",
+                        "patientIdentifier": "2999000300",
+                        "personIdentifier": "999000300",
+                        "personIdentifierTypeCode": "S"
+                    }
+                }
+            }
+        ]
+    }
+

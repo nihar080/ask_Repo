@@ -1,0 +1,32 @@
+{
+   "type": "myProfileChallengeQuestionsResponse",
+   "success": true,
+   "data":
+   [
+       {
+           "securityQuestionAnswerList":
+           [
+               {
+                   "answer": "pet",
+                   "question": "What was the name of your first pet?" 
+               },
+               {
+                   "answer": "animal",
+                   "question": "What was the name of your first stuffed animal?" 
+               },
+               {
+                   "answer": "friend",
+                   "question": "What is the name of your first girlfriend or boyfriend?" 
+               },
+               {
+                   "answer": "school",
+                   "question": "What school did you attend for kindergarten?" 
+               },
+               {
+                   "answer": "car",
+                   "question": "What was the make (Chevy, Ford, Honda, etc.) of your first car?" 
+               }
+           ]
+       }
+   ]
+}

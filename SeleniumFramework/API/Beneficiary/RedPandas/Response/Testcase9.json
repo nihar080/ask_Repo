@@ -1,0 +1,57 @@
+
+
+    {
+        "type": "deductibleBalanceResponse",
+        "success": true,
+        "data":
+        [
+            {
+                "deductibleByYear":
+                [
+                    {
+                        "familyCatCapAmount": 2000,
+                        "familyDeductibleAmount": 700,
+                        "familyPointOfServiceDeductibleAmount": 674,
+                        "fiscalYear": 2014,
+                        "individualCatCapAmount": 0,
+                        "individualDeductibleAmount": 0,
+                        "individualPointOfServiceDeductibleAmount": 0
+                    },
+                    {
+                        "familyCatCapAmount": 126.56,
+                        "familyDeductibleAmount": 300,
+                        "familyPointOfServiceDeductibleAmount": 234,
+                        "fiscalYear": 2015,
+                        "individualCatCapAmount": 0,
+                        "individualDeductibleAmount": 0,
+                        "individualPointOfServiceDeductibleAmount": 0
+                    },
+                    {
+                        "familyCatCapAmount": 0,
+                        "familyDeductibleAmount": 0,
+                        "familyPointOfServiceDeductibleAmount": 978.9,
+                        "fiscalYear": 2016,
+                        "individualCatCapAmount": 100.99,
+                        "individualDeductibleAmount": 645.89,
+                        "individualPointOfServiceDeductibleAmount": 0
+                    }
+                ],
+                "personInfo":
+                {
+                    "dateOfBirth": "06/26/2016",
+                    "dateOfDeath": "12/31/9999",
+                    "deersBeneficiaryId": "4444455555666",
+                    "deersFamilyId": "1111122222",
+                    "firstName": "Tong",
+                    "gender": "4445556777",
+                    "lastName": "Nguyen",
+                    "middleName": "T",
+                    "nameSuffix": "",
+                    "patientIdentifier": "665544444",
+                    "personIdentifier": "",
+                    "personIdentifierTypeCode": ""
+                }
+            }
+        ]
+    }
+

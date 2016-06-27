@@ -1,0 +1,14 @@
+{
+  "type": "userServicesUpdateEmailResponse",
+  "error": {
+    "code": 1,
+    "fieldErrors": [
+      {
+        "code": 1,
+        "fieldName": "EmailAddressSame",
+        "message": "The new email address is the same as the current email address: userID=testuser4 emailAddress=testuser4@optum.com"
+      }
+    ]
+  },
+  "success": false
+}

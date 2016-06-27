@@ -1,0 +1,19 @@
+
+
+    {
+        "type": "oonProviderSearchResponse",
+        "error":
+        {
+            "code": 2,
+            "fieldErrors":
+            [
+                {
+                    "code": 2,
+                    "fieldName": "Radius",
+                    "message": "We're sorry, a radius can only contain numeric characters.  Please try again."
+                }
+            ]
+        },
+        "success": false
+    }
+

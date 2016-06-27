@@ -1,0 +1,125 @@
+    {
+        "type": "oonProviderSearchResponse",
+        "success": true,
+        "data":
+        [
+            {
+                "city": "HEALY",
+                "distance": "11.739 miles",
+                "officePhone": "(907) 455-4567",
+                "state": "AK",
+                "street1": "USIBELLI SPUR RD",
+                "street2": "",
+                "zipcode": "99743",
+                "facilityName": "INTERIOR COMMUNITY HEALTH CENTER",
+                "primarySpecialty": "PHYSICIAN'S ASSISTANT",
+                "providerName": "MORTENSEN,CAMERON",
+                "secondarySpecialty": ""
+            },
+            {
+                "city": "DENALI",
+                "distance": "13.077 miles",
+                "officePhone": "(907) 683-4433",
+                "state": "AK",
+                "street1": "MILE POST 238 8 PARKS HWY",
+                "street2": "",
+                "zipcode": "99755",
+                "facilityName": "HORIZON MEDICAL INC",
+                "primarySpecialty": "PHYSICIAN'S ASSISTANT",
+                "providerName": "HOLLAND,ANDREW",
+                "secondarySpecialty": ""
+            },
+            {
+                "city": "DENALI",
+                "distance": "13.077 miles",
+                "officePhone": "(907) 683-4433",
+                "state": "AK",
+                "street1": "MILE POST 238 8 PARKS HWY",
+                "street2": "",
+                "zipcode": "99755",
+                "facilityName": "HORIZON MEDICAL INC",
+                "primarySpecialty": "PHYSICIAN'S ASSISTANT",
+                "providerName": "KOENCK,LEON,PA",
+                "secondarySpecialty": ""
+            },
+            {
+                "city": "DENALI",
+                "distance": "13.077 miles",
+                "officePhone": "(907) 683-4433",
+                "state": "AK",
+                "street1": "MILE POST 238 8 PARKS HWY",
+                "street2": "",
+                "zipcode": "99755",
+                "facilityName": "HORIZON MEDICAL INC",
+                "primarySpecialty": "NURSE PRACTITIONER",
+                "providerName": "NELSON,DEBORAH",
+                "secondarySpecialty": ""
+            },
+            {
+                "city": "DENALI",
+                "distance": "13.077 miles",
+                "officePhone": "(907) 683-4433",
+                "state": "AK",
+                "street1": "MILE POST 238 8 PARKS HWY",
+                "street2": "",
+                "zipcode": "99755",
+                "facilityName": "HORIZON MEDICAL INC",
+                "primarySpecialty": "NURSE PRACTITIONER",
+                "providerName": "ROBERTS,SHAWN",
+                "secondarySpecialty": ""
+            },
+            {
+                "city": "DENALI",
+                "distance": "13.077 miles",
+                "officePhone": "(907) 683-4433",
+                "state": "AK",
+                "street1": "MILE POST 238 8 PARKS HWY",
+                "street2": "",
+                "zipcode": "99755",
+                "facilityName": "HORIZON MEDICAL INC",
+                "primarySpecialty": "PHYSICIAN'S ASSISTANT",
+                "providerName": "ROBERTS,LINDSAY",
+                "secondarySpecialty": ""
+            },
+            {
+                "city": "DENALI",
+                "distance": "13.077 miles",
+                "officePhone": "(907) 683-4433",
+                "state": "AK",
+                "street1": "MILE POST 238 8 PARKS HWY",
+                "street2": "",
+                "zipcode": "99755",
+                "facilityName": "HORIZON MEDICAL INC",
+                "primarySpecialty": "PHYSICIAN'S ASSISTANT",
+                "providerName": "SIDDALL,JAMES",
+                "secondarySpecialty": ""
+            },
+            {
+                "city": "DENALI",
+                "distance": "13.077 miles",
+                "officePhone": "(907) 683-4433",
+                "state": "AK",
+                "street1": "MILE POST 238 8 PARKS HWY",
+                "street2": "",
+                "zipcode": "99755",
+                "facilityName": "HORIZON MEDICAL INC",
+                "primarySpecialty": "PHYSICIAN'S ASSISTANT",
+                "providerName": "WINKLMANN,JOHN,PA",
+                "secondarySpecialty": ""
+            },
+            {
+                "city": "DENALI PARK",
+                "distance": "13.229 miles",
+                "officePhone": "(877) 346-5286",
+                "state": "AK",
+                "street1": "238 8 PARKS HWY",
+                "street2": "",
+                "zipcode": "99755",
+                "facilityName": "CANYON CLINIC",
+                "primarySpecialty": "PHYSICIAN'S ASSISTANT",
+                "providerName": "ROBERTS,LINDSAY",
+                "secondarySpecialty": ""
+            }
+        ]
+    }
+
