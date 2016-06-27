@@ -86,7 +86,7 @@ public class FunctionalLibrary extends ReportLibrary {
 
 	// ADDED SOME FIELDS FOR API//
 	public String APIurl = "";
-	public String APIheader = "";
+	public List<String> APIheader = null;
 	public String APImethod = "";
 	public String APIpayload = "";
 	String APIactualResponse = "";
@@ -217,7 +217,7 @@ public class FunctionalLibrary extends ReportLibrary {
 				APImethod = fValue;
 				break;
 			case AddAPIheader:
-				APIheader = fValue;
+				APIheader.add(fValue);
 				break;
 			case GetAPIResponse:
 				getAPIresponse(fValue);
@@ -2609,6 +2609,7 @@ public class FunctionalLibrary extends ReportLibrary {
 
 	public void getAPIresponse(String fValue) throws JSONException, Exception {
 		String jPath = "";
+		APIactualResponse = "";
 		for (String str : fValue.split("/")) {
 			jPath = jPath + "\\" + str;
 		}
@@ -2617,7 +2618,10 @@ public class FunctionalLibrary extends ReportLibrary {
 		HttpURLConnection httpURLConnection = null;
 		JSONObject requestJsonObject = new JSONObject(readFile(payloadPath));
 		HashMap<String, String> headerParameters = new HashMap<String, String>();
-		headerParameters.put(APIheader.split(":")[0], APIheader.split(":")[1]);
+		
+		for (String apiHeader : APIheader) {
+			headerParameters.put(apiHeader.split(":")[0], apiHeader.split(":")[1]);
+		}
 		if (APImethod.equalsIgnoreCase("Post")) {
 			httpURLConnection = (HttpURLConnection) ConnectionHelper.createPostConnection(APIurl, headerParameters);
 		} else if (APImethod.equalsIgnoreCase("Get")) {
@@ -2625,15 +2629,16 @@ public class FunctionalLibrary extends ReportLibrary {
 		}
 		APIactualResponse = ResponseHelper.postResponseObject(httpURLConnection, requestJsonObject);
 		int responseCode = httpURLConnection.getResponseCode();
-
+		System.out.println("#################### RESPONSE CODE: " + responseCode);
 		if (APIactualResponse.isEmpty() || responseCode != 200) {
 			System.out.println("Got no response for the API");
 			throw new Exception("Got no response for the API");
 		} else {
-			System.out.println("Got response for payload:");
+			System.out.println("################## GOT RESPONSE");
 			System.out.println(requestJsonObject.toString());
 		}
 		httpURLConnection.disconnect();
+		APIheader.clear();headerParameters.clear();
 	}
 
 	public void checkAPIresponse(String fValue) throws Exception {
@@ -2649,9 +2654,9 @@ public class FunctionalLibrary extends ReportLibrary {
 		JSONObject expectedJson = new JSONObject(readFile(ExpectedJsonPath));
 		JSONObject actualJson = new JSONObject(APIactualResponse);
 
-		System.out.println("*************Actual Response************");
+		System.out.println("#################### Actual Response ################");
 		System.out.println(actualJson.toString());
-		System.out.println("*************Expected Response************");
+		System.out.println("#################### Expected Response #################");
 		System.out.println(expectedJson.toString());
 
 		if (!expectedJson.toString().equals(actualJson.toString())) {
