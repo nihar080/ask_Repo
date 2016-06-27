@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
@@ -86,7 +87,8 @@ public class FunctionalLibrary extends ReportLibrary {
 
 	// ADDED SOME FIELDS FOR API//
 	public String APIurl = "";
-	public List<String> APIheader = null;
+	public List<String> APIheader = new ArrayList<String>();
+//	public String APIheader = "";
 	public String APImethod = "";
 	public String APIpayload = "";
 	String APIactualResponse = "";
@@ -217,6 +219,7 @@ public class FunctionalLibrary extends ReportLibrary {
 				APImethod = fValue;
 				break;
 			case AddAPIheader:
+//				APIheader = fValue;
 				APIheader.add(fValue);
 				break;
 			case GetAPIResponse:
@@ -2619,6 +2622,7 @@ public class FunctionalLibrary extends ReportLibrary {
 		JSONObject requestJsonObject = new JSONObject(readFile(payloadPath));
 		HashMap<String, String> headerParameters = new HashMap<String, String>();
 		
+//		headerParameters.put(APIheader.split(":")[0], APIheader.split(":")[1]);
 		for (String apiHeader : APIheader) {
 			headerParameters.put(apiHeader.split(":")[0], apiHeader.split(":")[1]);
 		}
@@ -2638,7 +2642,8 @@ public class FunctionalLibrary extends ReportLibrary {
 			System.out.println(requestJsonObject.toString());
 		}
 		httpURLConnection.disconnect();
-		APIheader.clear();headerParameters.clear();
+//		APIheader.clear();
+		headerParameters.clear();
 	}
 
 	public void checkAPIresponse(String fValue) throws Exception {
