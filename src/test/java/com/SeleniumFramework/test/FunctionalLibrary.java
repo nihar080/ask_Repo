@@ -11,6 +11,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -214,6 +215,14 @@ public class FunctionalLibrary extends ReportLibrary {
 
 			case AddAPIurl:
 				APIurl = fValue;
+				URL callingURL = new URL(fValue);
+				System.out.println("Current Host: "+callingURL.getHost());
+//				if (!environment.isEmpty()) {
+//					APIurl = APIurl.replace(callingURL.getHost(), new URL(environment).getHost());
+//					System.out.println("## Changed URL to: " +APIurl);
+//				} else {
+//					System.out.println("## No env mentioned");
+//				}
 				break;
 			case AddAPImethod:
 				APImethod = fValue;
@@ -1092,7 +1101,6 @@ public class FunctionalLibrary extends ReportLibrary {
 		funBrowserclose();
 		driver.get(fValue_tmp);
 		driver.manage().window().maximize();
-		// driver.get("http://telugu.greatandhra.com/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Thread.sleep(synctime);
 		Thread.sleep(synctime);
@@ -2639,10 +2647,10 @@ public class FunctionalLibrary extends ReportLibrary {
 		if (APIactualResponse.isEmpty() || responseCode != 200) {
 			System.out.println("Got no response for the API");
 			throw new Exception("Got no response for the API");
-		} else {
-			System.out.println("################## GOT RESPONSE");
-			System.out.println(requestJsonObject.toString());
-		}
+		} 
+//		else {
+//			System.out.println("################## GOT RESPONSE: " +APIactualResponse);
+//		}
 		httpURLConnection.disconnect();
 		APIheader.clear();
 		headerParameters.clear();
