@@ -1252,6 +1252,7 @@ public class FunctionalLibrary extends ReportLibrary {
 	private static void funAngJsVerifyTextpresent(String feType, String objName, String fValue)
 			throws InterruptedException {
 		String validator_gbl;
+		@SuppressWarnings("deprecation")
 		boolean Flag = selenium.isTextPresent(fValue);
 		validate = funcFindElement(feType, objName);
 		if (checkIfAngularJsPageLoad()) {
