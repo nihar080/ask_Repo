@@ -1,0 +1,14 @@
+{
+  "type": "oonProviderSearchResponse",
+  "error": {
+    "code": 2,
+    "fieldErrors": [
+      {
+        "code": 2,
+        "fieldName": "NoSearchCriteria",
+        "message": "No search criteria was entered. Please try again."
+      }
+    ]
+  },
+  "success": false
+}

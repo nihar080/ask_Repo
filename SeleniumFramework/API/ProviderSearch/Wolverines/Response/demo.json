@@ -1,0 +1,53 @@
+{
+  "type": "mtfProviderSearchResponse",
+  "success": true,
+  "data": [
+    {
+      "city": "Ft. Leonard Wood",
+      "distance": "",
+      "officePhone": "",
+      "state": "MO",
+      "street1": "4430 Missouri Avenue",
+      "zipcode": "65473-8952",
+      "afterHoursInfo": "Call 1-573-596-0456.",
+      "appointmentHours": "Monday - Friday: 7:30 a.m. - 4:30 p.m. \n1st and 3rd Thursday of every month: 7:30 a.m. - 12:30 p.m. \nClosed on Weekends and Federal Holidays",
+      "appointmentPhoneNumber": "1-866-299-4234",
+      "dmsId": "0075",
+      "emergencyInfo": "If you have an emergency, go to the nearest emergency room or call 911. To learn more, visit www.tricare.mil/emergency.",
+      "facilityId": "139",
+      "facilityName": "General Leonard Wood Army Community Hospital",
+      "facilityType": "",
+      "pharmacyHours": "Monday - Friday: 7:00 a.m. - 6:00 p.m.\nSaturday: 8:00 a.m. - 5:00 p.m. \nClosed on Sundays and Federal Holidays.\n\nPX Pharmacy: 9:00 a.m. - 6:00 p.m.\nClosed on Weekends, Federal Holidays and Training Holidays",
+      "pharmacyPhoneNumber": "1-573-596-0514",
+      "specialties": [
+        "Audiology / Speech Pathology",
+        "Dietetics",
+        "Emergency Services",
+        "Family Medicine",
+        "Internal Medicine",
+        "Neurology",
+        "OB/GYN",
+        "Occupational Therapy",
+        "Ophthalmology",
+        "Optometry",
+        "Orthopedics",
+        "Otolaryngology (ENT)",
+        "Pediatrics",
+        "Physical Therapy",
+        "Psychiatry",
+        "Surgery",
+        "Chiropractics",
+        "Nuclear Medicine",
+        "Podiatry",
+        "Population Health (wellness)",
+        "Psychology",
+        "Social Work",
+        "Substance Abuse",
+        "Occupational Health",
+        "Community Health",
+        "Health Promotion",
+        "Immunizations"
+      ]
+    }
+  ]
+}

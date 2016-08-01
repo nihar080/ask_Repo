@@ -1,0 +1,14 @@
+{
+  "type": "tricareClickToCallResponse",
+  "error": {
+    "code": 3,
+    "fieldErrors": [
+      {
+        "code": 3,
+        "fieldName": "providerTaxId",
+        "message": "Provider Tax Id is Required Parameter."
+      }
+    ]
+  },
+  "success": false
+}

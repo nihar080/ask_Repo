@@ -1,0 +1,24 @@
+{
+  "type": "tricareClickToCallResponse",
+  "error": {
+    "code": 3,
+    "fieldErrors": [
+      {
+        "code": 3,
+        "fieldName": "callBackNumber",
+        "message": "Call Back Number is Required Parameter."
+      },
+      {
+        "code": 3,
+        "fieldName": "comment",
+        "message": "Comment is Required Parameter."
+      },
+      {
+        "code": 3,
+        "fieldName": "userType",
+        "message": "User Type is Required Parameter."
+      }
+    ]
+  },
+  "success": false
+}

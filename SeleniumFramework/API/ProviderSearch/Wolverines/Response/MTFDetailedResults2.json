@@ -1,0 +1,31 @@
+{
+  "type": "mtfProviderSearchResponse",
+  "success": true,
+  "data": [
+    {
+      "city": "Fallon",
+      "distance": "",
+      "officePhone": "",
+      "state": "NV",
+      "street1": "4755 Pasture Road",
+      "street2": "Naval Air Station Fallon",
+      "zipcode": "89496-5000",
+      "afterHoursInfo": "If you need care after normal working hours, please contact the clinic at 1-775-426-3100 for direction.",
+      "appointmentHours": "Monday - Friday: 7:30 a.m. - 4:30 p.m.",
+      "appointmentPhoneNumber": "1-877-843-2735",
+      "dmsId": "0319",
+      "emergencyInfo": "In case of emergency call 911 or proceed to the nearest emergency room.  Please contact the Naval Branch Health Clinic Fallon at 1-775-426-3100 following the ER visit to ensure appropriate documentation.",
+      "facilityId": "293",
+      "facilityName": "Naval Branch Health Clinic Fallon",
+      "facilityType": "",
+      "pharmacyHours": "Monday - Friday: 7:30 a.m. - 4:30 p.m.",
+      "pharmacyPhoneNumber": "1-775-426-3122",
+      "specialties": [
+        "Family Medicine",
+        "Population Health (wellness)",
+        "Substance Abuse",
+        "Occupational Health"
+      ]
+    }
+  ]
+}

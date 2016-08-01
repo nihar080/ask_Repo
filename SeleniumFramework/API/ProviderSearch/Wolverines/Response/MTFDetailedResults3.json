@@ -1,0 +1,14 @@
+{
+  "type": "mtfProviderSearchResponse",
+  "error": {
+    "code": 1,
+    "fieldErrors": [
+      {
+        "code": 1,
+        "fieldName": "FacilityID",
+        "message": "Invalid Facility ID."
+      }
+    ]
+  },
+  "success": false
+}

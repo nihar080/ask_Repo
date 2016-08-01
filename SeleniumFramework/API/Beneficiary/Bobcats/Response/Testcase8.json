@@ -1,0 +1,14 @@
+{
+  "type": "authenticationServicesPostSignInResponse",
+  "error": {
+    "code": 1,
+    "fieldErrors": [
+      {
+        "code": 1,
+        "fieldName": "userName",
+        "message": "Please enter a Username."
+      }
+    ]
+  },
+  "success": false
+}

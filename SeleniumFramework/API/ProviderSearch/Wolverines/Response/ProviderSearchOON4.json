@@ -1,0 +1,32 @@
+{
+  "type": "oonProviderSearchResponse",
+  "success": true,
+  "data": [
+    {
+      "city": "GALENA",
+      "distance": "0.759 miles",
+      "officePhone": "(907) 451-6682",
+      "state": "AK",
+      "street1": "77 ANTOSKI AVE",
+      "street2": "",
+      "zipcode": "99741",
+      "facilityName": "TANANA CHIEFS CONFERENCE GALENA",
+      "primarySpecialty": "FAMILY PRACTICE",
+      "providerName": "HUNTINGTON,TAMARA",
+      "secondarySpecialty": ""
+    },
+    {
+      "city": "GALENA",
+      "distance": "0.759 miles",
+      "officePhone": "(907) 451-6682",
+      "state": "AK",
+      "street1": "77 ANTOSKI AVE",
+      "street2": "",
+      "zipcode": "99741",
+      "facilityName": "TANANA CHIEFS CONFERENCE GALENA",
+      "primarySpecialty": "PEDIATRICS",
+      "providerName": "WALZ,BENJAMIN,MPH",
+      "secondarySpecialty": ""
+    }
+  ]
+}

@@ -5,11 +5,7 @@
     {
       "usernameVerified": true,
       "authenticated": true,
-      "dayUntilPasswordExpired": 13,
-      "mustChangePassword": false,
-      "passwordExpired": false,
-      "passwordWarn": false,
-      "userName": "bene0600"
+      "mustChangePassword": false
     }
   ]
 }

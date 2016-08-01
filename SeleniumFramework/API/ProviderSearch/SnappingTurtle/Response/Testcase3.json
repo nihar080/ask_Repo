@@ -1,0 +1,29 @@
+{
+  "type": "physicianProviderSearchResponse",
+  "success": true,
+  "data": [
+    {
+      "city": "LOS ANGELES",
+      "distance": "",
+      "officePhone": "",
+      "state": "CA",
+      "street1": "123 E 95TH ST",
+      "street2": "",
+      "zipcode": "90003",
+      "firstName": "ROSEY",
+      "lastName": "QTP20121129161718"
+    },
+    {
+      "city": "LOS ANGELES",
+      "distance": "",
+      "officePhone": "",
+      "state": "CA",
+      "street1": "PO BOX 73507",
+      "street2": "",
+      "zipcode": "90003",
+      "firstName": "SHARMA",
+      "lastName": "TEST_NISHI"
+    }
+  ],
+  "resultsTotalCount": 0
+}

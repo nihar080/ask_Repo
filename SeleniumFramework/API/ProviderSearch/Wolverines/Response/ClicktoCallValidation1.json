@@ -1,0 +1,11 @@
+{
+  "type": "tricareClickToCallResponse",
+  "success": true,
+  "data": [
+    {
+      "responseMessage": "Callback number: '1234567', is not valid.",
+      "responseReturnCode": "8",
+      "waitTimeMinutes": "0"
+    }
+  ]
+}

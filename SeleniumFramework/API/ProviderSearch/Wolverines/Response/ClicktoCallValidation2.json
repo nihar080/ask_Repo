@@ -1,0 +1,14 @@
+{
+  "type": "tricareClickToCallResponse",
+  "error": {
+    "code": 3,
+    "fieldErrors": [
+      {
+        "code": 3,
+        "fieldName": "authUserType",
+        "message": "Auth User Type is Required Parameter."
+      }
+    ]
+  },
+  "success": false
+}

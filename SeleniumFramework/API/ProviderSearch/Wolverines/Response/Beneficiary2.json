@@ -1,0 +1,10 @@
+{
+  "type": "userServicesVerifyChallengeAnswersResponse",
+  "success": true,
+  "data": [
+    {
+      "usernameVerified": true,
+      "answersVerfied": false
+    }
+  ]
+}

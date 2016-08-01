@@ -1,0 +1,14 @@
+{
+  "type": "oonProviderSearchResponse",
+  "error": {
+    "code": 2,
+    "fieldErrors": [
+      {
+        "code": 2,
+        "fieldName": "Longitude/Latitude",
+        "message": "Longitude and Latitude are required.  Please try again."
+      }
+    ]
+  },
+  "success": false
+}

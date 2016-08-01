@@ -1,0 +1,277 @@
+{
+  "type": "familyAccessResponse",
+  "success": true,
+  "data": [
+    {
+      "actor": {
+        "dbn": "10999000600",
+        "dob": "1970-10-14T00:00:00-05:00",
+        "familyIdentifier": "109990006",
+        "fname": "Chad",
+        "hcdpPlanCoverageCode": "106",
+        "lname": "Washington",
+        "outsideRegionInd": false,
+        "sponsorInd": true,
+        "spouseInd": false,
+        "zipCode": "66051",
+        "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00"
+      },
+      "elapsedMap": {
+        "entry": [
+          {
+            "key": "DEERS",
+            "value": 84
+          },
+          {
+            "key": "TOTAL",
+            "value": 109
+          },
+          {
+            "key": "DATABASE",
+            "value": 23
+          }
+        ]
+      },
+      "familyDbnCollection": [
+        "10999000601",
+        "10999000602",
+        "10999000603",
+        "10999000604"
+      ],
+      "familySubjectCollection": [
+        {
+          "dbn": "10999000604",
+          "dob": "2008-02-20T00:00:00-06:00",
+          "fname": "Baby109224",
+          "hcdpPlanCoverageCode": "106",
+          "lname": "Washington",
+          "outsideRegionInd": false,
+          "spouseInd": false,
+          "zipCode": "66051",
+          "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+          "action": "DEFAULT",
+          "actionBy": "DEFAULT",
+          "display": "DEFAULT"
+        },
+        {
+          "dbn": "10999000603",
+          "dob": "2006-12-01T00:00:00-06:00",
+          "fname": "Jessica",
+          "hcdpPlanCoverageCode": "106",
+          "lname": "Washington",
+          "outsideRegionInd": false,
+          "spouseInd": false,
+          "zipCode": "66051",
+          "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+          "action": "DEFAULT",
+          "actionBy": "DEFAULT",
+          "display": "DEFAULT"
+        },
+        {
+          "dbn": "10999000602",
+          "dob": "2005-09-01T00:00:00-05:00",
+          "fname": "Kelly",
+          "hcdpPlanCoverageCode": "106",
+          "lname": "Washington",
+          "outsideRegionInd": false,
+          "spouseInd": false,
+          "zipCode": "66051",
+          "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+          "action": "DEFAULT",
+          "actionBy": "DEFAULT",
+          "display": "DEFAULT"
+        },
+        {
+          "dbn": "10999000601",
+          "dob": "1988-04-01T00:00:00-06:00",
+          "fname": "Kimberly",
+          "hcdpPlanCoverageCode": "106",
+          "lname": "Washington",
+          "outsideRegionInd": false,
+          "spouseInd": true,
+          "zipCode": "66051",
+          "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+          "action": "DEFAULT",
+          "actionBy": "DEFAULT",
+          "display": "DEFAULT"
+        }
+      ],
+      "familySubjectMap": {
+        "entry": [
+          {
+            "key": "10999000601",
+            "value": {
+              "dbn": "10999000601",
+              "dob": "1988-04-01T00:00:00-06:00",
+              "fname": "Kimberly",
+              "hcdpPlanCoverageCode": "106",
+              "lname": "Washington",
+              "outsideRegionInd": false,
+              "spouseInd": true,
+              "zipCode": "66051",
+              "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+              "action": "DEFAULT",
+              "actionBy": "DEFAULT",
+              "display": "DEFAULT"
+            }
+          },
+          {
+            "key": "10999000602",
+            "value": {
+              "dbn": "10999000602",
+              "dob": "2005-09-01T00:00:00-05:00",
+              "fname": "Kelly",
+              "hcdpPlanCoverageCode": "106",
+              "lname": "Washington",
+              "outsideRegionInd": false,
+              "spouseInd": false,
+              "zipCode": "66051",
+              "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+              "action": "DEFAULT",
+              "actionBy": "DEFAULT",
+              "display": "DEFAULT"
+            }
+          },
+          {
+            "key": "10999000603",
+            "value": {
+              "dbn": "10999000603",
+              "dob": "2006-12-01T00:00:00-06:00",
+              "fname": "Jessica",
+              "hcdpPlanCoverageCode": "106",
+              "lname": "Washington",
+              "outsideRegionInd": false,
+              "spouseInd": false,
+              "zipCode": "66051",
+              "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+              "action": "DEFAULT",
+              "actionBy": "DEFAULT",
+              "display": "DEFAULT"
+            }
+          },
+          {
+            "key": "10999000604",
+            "value": {
+              "dbn": "10999000604",
+              "dob": "2008-02-20T00:00:00-06:00",
+              "fname": "Baby109224",
+              "hcdpPlanCoverageCode": "106",
+              "lname": "Washington",
+              "outsideRegionInd": false,
+              "spouseInd": false,
+              "zipCode": "66051",
+              "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+              "action": "DEFAULT",
+              "actionBy": "DEFAULT",
+              "display": "DEFAULT"
+            }
+          }
+        ]
+      },
+      "visibleDbnCollection": [
+        "10999000602",
+        "10999000603",
+        "10999000604"
+      ],
+      "visibleSubjectCollection": [
+        {
+          "dbn": "10999000602",
+          "dob": "2005-09-01T00:00:00-05:00",
+          "fname": "Kelly",
+          "hcdpPlanCoverageCode": "106",
+          "lname": "Washington",
+          "outsideRegionInd": false,
+          "spouseInd": false,
+          "zipCode": "66051",
+          "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+          "action": "DEFAULT",
+          "actionBy": "DEFAULT",
+          "display": "DEFAULT"
+        },
+        {
+          "dbn": "10999000603",
+          "dob": "2006-12-01T00:00:00-06:00",
+          "fname": "Jessica",
+          "hcdpPlanCoverageCode": "106",
+          "lname": "Washington",
+          "outsideRegionInd": false,
+          "spouseInd": false,
+          "zipCode": "66051",
+          "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+          "action": "DEFAULT",
+          "actionBy": "DEFAULT",
+          "display": "DEFAULT"
+        },
+        {
+          "dbn": "10999000604",
+          "dob": "2008-02-20T00:00:00-06:00",
+          "fname": "Baby109224",
+          "hcdpPlanCoverageCode": "106",
+          "lname": "Washington",
+          "outsideRegionInd": false,
+          "spouseInd": false,
+          "zipCode": "66051",
+          "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+          "action": "DEFAULT",
+          "actionBy": "DEFAULT",
+          "display": "DEFAULT"
+        }
+      ],
+      "visibleSubjectMap": {
+        "entry": [
+          {
+            "key": "10999000602",
+            "value": {
+              "dbn": "10999000602",
+              "dob": "2005-09-01T00:00:00-05:00",
+              "fname": "Kelly",
+              "hcdpPlanCoverageCode": "106",
+              "lname": "Washington",
+              "outsideRegionInd": false,
+              "spouseInd": false,
+              "zipCode": "66051",
+              "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+              "action": "DEFAULT",
+              "actionBy": "DEFAULT",
+              "display": "DEFAULT"
+            }
+          },
+          {
+            "key": "10999000603",
+            "value": {
+              "dbn": "10999000603",
+              "dob": "2006-12-01T00:00:00-06:00",
+              "fname": "Jessica",
+              "hcdpPlanCoverageCode": "106",
+              "lname": "Washington",
+              "outsideRegionInd": false,
+              "spouseInd": false,
+              "zipCode": "66051",
+              "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+              "action": "DEFAULT",
+              "actionBy": "DEFAULT",
+              "display": "DEFAULT"
+            }
+          },
+          {
+            "key": "10999000604",
+            "value": {
+              "dbn": "10999000604",
+              "dob": "2008-02-20T00:00:00-06:00",
+              "fname": "Baby109224",
+              "hcdpPlanCoverageCode": "106",
+              "lname": "Washington",
+              "outsideRegionInd": false,
+              "spouseInd": false,
+              "zipCode": "66051",
+              "zipCodeEffectiveDt": "2012-01-15T00:00:00-06:00",
+              "action": "DEFAULT",
+              "actionBy": "DEFAULT",
+              "display": "DEFAULT"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

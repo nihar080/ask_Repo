@@ -1,0 +1,11 @@
+{
+  "type": "tricareClickToCallResponse",
+  "success": true,
+  "data": [
+    {
+      "responseMessage": "",
+      "responseReturnCode": "0",
+      "waitTimeMinutes": "0"
+    }
+  ]
+}

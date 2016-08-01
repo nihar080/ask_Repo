@@ -1,0 +1,14 @@
+{
+  "type": "mtfProviderSearchResponse",
+  "error": {
+    "code": 3,
+    "fieldErrors": [
+      {
+        "code": 3,
+        "fieldName": "NODATA",
+        "message": "No results found for the search criteria entered.  Please try again."
+      }
+    ]
+  },
+  "success": false
+}
