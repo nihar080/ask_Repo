@@ -67,6 +67,7 @@ import com.marklogic.client.io.DocumentMetadataHandle;
 import com.marklogic.client.io.JacksonHandle;
 import com.thoughtworks.selenium.Selenium;
 
+import junit.framework.Assert;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -208,21 +209,26 @@ public class FunctionalLibrary extends ReportLibrary {
 		try {
 
 			wait = new WebDriverWait(driver, 120);
-			int synctime = 1000, Longsynctime = 10000;
+			synctime = 1000;Longsynctime = 10000;
 			KeywordActions Action = KeywordActions.valueOf(action);
 
 			switch (Action) {
 
 			case AddAPIurl:
 				APIurl = fValue;
-				URL callingURL = new URL(fValue);
-				System.out.println("Current Host: "+callingURL.getHost());
-//				if (!environment.isEmpty()) {
-//					APIurl = APIurl.replace(callingURL.getHost(), new URL(environment).getHost());
-//					System.out.println("## Changed URL to: " +APIurl);
-//				} else {
-//					System.out.println("## No env mentioned");
-//				}
+                URL url = new URL(
+//                		FunctionalLibrary.url
+                		"http://dispatcher-tmptst1.ose.optum.com/uhcm/beneficiary.html"
+                		);
+                String host = url.getHost();
+                URL callingURL = new URL(fValue);
+                String myCalledURL = callingURL.toString().replace(callingURL.getHost(), url.getHost());
+                callingURL = new URL(myCalledURL);
+//              System.out.println("Current Host: "+callingURL.getHost());
+                
+                System.out.println("Calling URL: "+ callingURL.toString());
+
+
 				break;
 			case AddAPImethod:
 				APImethod = fValue;
@@ -240,6 +246,12 @@ public class FunctionalLibrary extends ReportLibrary {
 				break;
 
 			case OpenURL:
+				if (System.getenv("SELENIUM_HOST") != null) {
+					System.out.println("######### SELENIUM_HOST: "+System.getenv("SELENIUM_HOST"));
+					FunctionalLibrary.url = FunctionalLibrary.url.replace(new URL(FunctionalLibrary.url).getHost(),
+							(new URL(System.getenv("SELENIUM_HOST"))).getHost());
+//					System.out.println("######### Calling URL: "+FunctionalLibrary.url);
+				}
 				fValue_tmp = FunctionalLibrary.url;
 				funcOpenUrl(feType, objName, fValue);
 				Thread.sleep(synctime);
@@ -248,7 +260,7 @@ public class FunctionalLibrary extends ReportLibrary {
 
 				funcClick(feType, objName, fValue);
 				// Thread.sleep(Longsynctime);Thread.sleep(3000);
-				Thread.sleep(Longsynctime);
+//				Thread.sleep(Longsynctime);
 				System.out.println("Click Performed !!!");
 				break;
 			case Input:
@@ -841,7 +853,7 @@ public class FunctionalLibrary extends ReportLibrary {
 		String Outputparam_Sheet = Value[0];
 		String ResponseID = Value[1];
 
-		String Outputfile = "WebServicesAutomation\\Output.xls";
+		String Outputfile = "WebServicesAutomation"+File.separator+"Output.xls";
 		// fileOut = new FileOutputStream(Outputfile);
 		// workbook = new HSSFWorkbook();
 		// worksheet = workbook.getSheet("ServiceName");
@@ -955,7 +967,7 @@ public class FunctionalLibrary extends ReportLibrary {
 		String Outputparam_Sheet = Value[0];
 		String ResponseID = Value[1];
 
-		String Outputfile = "WebServicesAutomation\\Output.xls";
+		String Outputfile = "WebServicesAutomation"+File.separator+"Output.xls";
 
 		String[] TestSheetValue = Testsheet.split("#");
 
@@ -1035,7 +1047,7 @@ public class FunctionalLibrary extends ReportLibrary {
 		// String Outputparam = fValue;
 
 		String module = ReportLibrary.strModuleName;
-		String TestDatafile_path = "SeleniumFramework\\Test_Modules\\" + module + ".xls";
+		String TestDatafile_path = "SeleniumFramework"+File.separator+"Test_Modules"+File.separator+"" + module + ".xls";
 
 		System.out.println("Complete Path" + TestDatafile_path);
 
@@ -1463,7 +1475,7 @@ public class FunctionalLibrary extends ReportLibrary {
 		} else if (excelFileUtil.platform.equalsIgnoreCase("Chrome")) {
 			driver.close();
 			String ss;
-			ss = "lib\\chromedriver.exe";
+			ss = "lib"+File.separator+"chromedriver.exe";
 			System.out.println("SS: " + ss);
 			System.setProperty("webdriver.chrome.driver", ss);
 			System.setProperty(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY, ss);
@@ -1530,6 +1542,14 @@ public class FunctionalLibrary extends ReportLibrary {
 		}
 	}
 
+	
+	/**
+	 * @param feType = xpath/id/name/link/linkText/CSS
+	 * @param objName = String
+	 * @param fValue = Attribure of element
+	 * @description: This will store attribute innertext/Value or text to the global variable 
+	 * @throws InterruptedException
+	 */
 	private static void funGetprop(String feType, String objName, String fValue) throws InterruptedException {
 		WebElement element;
 		element = funcFindElement(feType, objName);
@@ -2036,11 +2056,12 @@ public class FunctionalLibrary extends ReportLibrary {
 	}
 
 	private void funcClick(String fetype, String objName, String fValue) throws InterruptedException, IOException {
-		WebElement element;
-		element = funcFindElement(fetype, objName);
-		element.click();
-		Thread.sleep(Longsynctime);
-		Thread.sleep(Longsynctime);
+//		WebElement element;
+//		element = ;
+		(new WebDriverWait(driver, 5)).until(ExpectedConditions.elementToBeClickable(funcFindElement(fetype, objName))).click();
+//		element.click();
+//		Thread.sleep(Longsynctime);
+//		Thread.sleep(Longsynctime);
 
 	}
 
@@ -2107,7 +2128,7 @@ public class FunctionalLibrary extends ReportLibrary {
 
 			}
 			file.close();
-			FileOutputStream out = new FileOutputStream(new File("SeleniumFramework\\Test_Templates\\OPTUMIDDATA.xls"));
+			FileOutputStream out = new FileOutputStream(new File("SeleniumFramework"+File.separator+"Test_Templates"+File.separator+"OPTUMIDDATA.xls"));
 			workbook.write(out);
 			out.close();
 
@@ -2122,7 +2143,7 @@ public class FunctionalLibrary extends ReportLibrary {
 
 	public static String getSettingsFromExxConfig(String strKey) throws FileNotFoundException, IOException {
 		Properties prop = new Properties();
-		prop.load(new FileInputStream("SeleniumFramework\\Test_Templates\\AppConfig.properties"));
+		prop.load(new FileInputStream("SeleniumFramework"+File.separator+"Test_Templates"+File.separator+"AppConfig.properties"));
 		String strData = prop.getProperty(strKey);
 		strData = strData.trim();
 		return strData;
@@ -2130,13 +2151,13 @@ public class FunctionalLibrary extends ReportLibrary {
 
 	public static String getSettingsFromTemplate(String strKey) throws FileNotFoundException, IOException {
 		Properties prop = new Properties();
-		prop.load(new FileInputStream("SeleniumFramework\\Test_Templates\\Registration_Data.properties"));
+		prop.load(new FileInputStream("SeleniumFramework"+File.separator+"Test_Templates"+File.separator+"Registration_Data.properties"));
 		String strData = prop.getProperty(strKey);
 		strData = strData.trim();
 		return strData;
 	}
 
-	protected static WebElement funcFindElement(String elmToIdentify, String obj) throws InterruptedException {
+	protected static WebElement funcFindElement(String elmToIdentify, String obj) {
 		if (elmToIdentify.equals("") && obj.equals("")) {
 			System.out.println("No such Object is found: " + fieldName + " on screen: " + screenName);
 			LOG_VAR = 0;
@@ -2144,39 +2165,28 @@ public class FunctionalLibrary extends ReportLibrary {
 			String Trace = "No such Object is found: " + fieldName + " on screen: " + screenName;
 			sendLog(Trace, PREVIOUS_TEST_CASE, TEST_STEP_COUNT);
 		} else {
-			int timeOut = 1;
-			// Synchronization is implemented using while loop.
-			while (timeOut <= 3) {
-				try {
+			By by = null;
 
 					if (elmToIdentify.equalsIgnoreCase("LinkText")) {
-						return driver.findElement(By.linkText(obj));
+						by = By.linkText(obj);
 					} else if (elmToIdentify.equalsIgnoreCase("Class")) {
-						return driver.findElement(By.className(obj));
+						by = By.className(obj);
 					} else if (elmToIdentify.equalsIgnoreCase("CSS")) {
-						return driver.findElement(By.cssSelector(obj));
-					} else if (elmToIdentify.equalsIgnoreCase("ID")) {
-						return driver.findElement(By.id(obj));
+						by = By.cssSelector(obj);
+						by = By.id(obj);
 					} else if (elmToIdentify.equalsIgnoreCase("Name")) {
-						return driver.findElement(By.name(obj));
+						by = By.name(obj);
 					} else if (elmToIdentify.equalsIgnoreCase("PartialLinkText")) {
-						return driver.findElement(By.partialLinkText(obj));
+						by = By.partialLinkText(obj);
 					} else if (elmToIdentify.equalsIgnoreCase("TagName")) {
-						return driver.findElement(By.tagName(obj));
+						by = By.tagName(obj);
 					} else if (elmToIdentify.equalsIgnoreCase("xpath")) {
-						return driver.findElement(By.xpath(obj));
+						by = By.xpath(obj);
 					} else if (elmToIdentify.equalsIgnoreCase("dynamicXpath")) {
-						// getCellValue(readScriptSheet,
-						// tempStartRow,6+FIELD_INDEX)
 						obj = obj.replace("VARIABLE", DVARIABLE);
-						return driver.findElement(By.xpath(obj));
+						by = By.xpath(obj);
 					}
-				} catch (Exception e) {
-					Thread.sleep(1000);
-					System.out.println(obj + " not found for " + timeOut + " times.");
-				}
-				timeOut = timeOut + 1;
-			}
+					return (new WebDriverWait(driver, 15)).until((ExpectedConditions.presenceOfElementLocated(by)));
 		}
 		throw new NoSuchElementException("Timeout waiting for Object: " + obj + ", whose FieldName is: " + fieldName
 				+ " on Screen: " + screenName);
@@ -2184,7 +2194,7 @@ public class FunctionalLibrary extends ReportLibrary {
 
 	public static String getSettingsFromOpenEnroll(String strKey) throws FileNotFoundException, IOException {
 		Properties prop = new Properties();
-		prop.load(new FileInputStream("SeleniumFramework\\Test_Templates\\OpenEnroll.properties"));
+		prop.load(new FileInputStream("SeleniumFramework"+File.separator+"Test_Templates"+File.separator+"OpenEnroll.properties"));
 		String strData = prop.getProperty(strKey);
 		strData = strData.trim();
 		return strData;
@@ -2451,25 +2461,25 @@ public class FunctionalLibrary extends ReportLibrary {
 		JasperExportManager.exportReportToHtmlFile(jasperPrint, outputFile);
 		Runtime rTime = Runtime.getRuntime();
 		System.out.println(System.getProperty("user.dir"));
-		String url = System.getProperty("user.dir") + "/SeleniumFramework/Test_Jasper_Report/Report.html";
-		String browser = "C:/Program Files/Internet Explorer/iexplore.exe ";
+		String url = System.getProperty("user.dir") +File.separator+"SeleniumFramework"+File.separator+"Test_Jasper_Report"+File.separator+"Report.html";
+		String browser = "C:"+File.separator+"Program Files"+File.separator+"Internet Explorer"+File.separator+"iexplore.exe ";
 		Process pc = rTime.exec(browser + url);
 		pc.waitFor();
 	}
 
 	public static void JasperReportExecut() throws JRException, IOException, InterruptedException {
-		String reportFile = "SeleniumFramework\\Jasper_Data\\Jasper.jrxml";
+		String reportFile = "SeleniumFramework"+File.separator+"Jasper_Data"+File.separator+"Jasper.jrxml";
 		JRXlsDataSource ds1 = getDataSource1();
 		JasperPrint jasperPrint;
 		JasperDesign jasperDesign = JRXmlLoader.load(reportFile);
 		JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
 		jasperPrint = JasperFillManager.fillReport(jasperReport, null, ds1);
-		exportReportToXHtmlFile(jasperPrint, "SeleniumFramework\\Test_Jasper_Report\\Report.html");
+		exportReportToXHtmlFile(jasperPrint, "SeleniumFramework"+File.separator+"Test_Jasper_Report"+File.separator+"Report.html");
 
 	}
 
 	public JacksonHandle readFulfillmentRecordById(String id) {
-		String recordId = "/" + fulfillmentCollectionName + "/" + id + ".json";
+		String recordId = File.separator+ fulfillmentCollectionName +File.separator+ id + ".json";
 		Boolean isExist = isExistFulfillmentRecord(id);
 		if (isExist) {
 			jacksonHandle = documentManager.read(recordId, fulfillmentMetadata, jacksonHandle);
@@ -2478,7 +2488,7 @@ public class FunctionalLibrary extends ReportLibrary {
 	}
 
 	public JacksonHandle readDispatchRecordById(String id) {
-		String recordId = "/" + DispatchCollectionName + "/" + id + ".json";
+		String recordId = File.separator + DispatchCollectionName +File.separator+ id + ".json";
 		Boolean isExist = isExistDispatchRecord(id);
 		if (isExist) {
 			jacksonHandle = documentManager.read(recordId, dispatchRecordMetadata, jacksonHandle);
@@ -2487,7 +2497,7 @@ public class FunctionalLibrary extends ReportLibrary {
 	}
 
 	public boolean isExistFulfillmentRecord(String id) {
-		String recordId = "/" + fulfillmentCollectionName + "/" + id + ".json";
+		String recordId = File.separator + fulfillmentCollectionName + File.separator + id + ".json";
 		desc = documentManager.exists(recordId);
 		if (desc != null)
 			return true;
@@ -2496,7 +2506,7 @@ public class FunctionalLibrary extends ReportLibrary {
 	}
 
 	public boolean isExistDispatchRecord(String id) {
-		String recordId = "/" + DispatchCollectionName + "/" + id + ".json";
+		String recordId = File.separator + DispatchCollectionName +File.separator+ id + ".json";
 		desc = documentManager.exists(recordId);
 		if (desc != null)
 			return true;
@@ -2625,9 +2635,9 @@ public class FunctionalLibrary extends ReportLibrary {
 		String jPath = "";
 		APIactualResponse = "";
 		for (String str : fValue.split("/")) {
-			jPath = jPath + "\\" + str;
+			jPath = jPath + ""+File.separator+"" + str;
 		}
-		String payloadPath = "SeleniumFramework\\API" + jPath;
+		String payloadPath = "SeleniumFramework"+File.separator+"API" + jPath;
 
 		HttpURLConnection httpURLConnection = null;
 		JSONObject requestJsonObject = new JSONObject(readFile(payloadPath));
@@ -2660,9 +2670,9 @@ public class FunctionalLibrary extends ReportLibrary {
 	public void checkAPIresponse(String fValue) throws Exception {
 		String jsonPath = "";
 		for (String str : fValue.split("/")) {
-			jsonPath = jsonPath + "\\" + str;
+			jsonPath = jsonPath + ""+File.separator+"" + str;
 		}
-		String ExpectedJsonPath = "SeleniumFramework\\API" + jsonPath;
+		String ExpectedJsonPath = "SeleniumFramework"+File.separator+"API" + jsonPath;
 		if (APIactualResponse.isEmpty()) {
 			System.out.println("No Response to compare. Seem the rest call failed");
 			throw new Exception("No Response to compare. Seem the rest call failed");
@@ -2682,3 +2692,4 @@ public class FunctionalLibrary extends ReportLibrary {
 	}
 
 }
+//Test Commit

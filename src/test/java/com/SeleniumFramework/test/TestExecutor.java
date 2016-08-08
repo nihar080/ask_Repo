@@ -1,5 +1,6 @@
 package com.SeleniumFramework.test;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -58,8 +59,8 @@ public class TestExecutor extends FunctionalLibrary{
 				    	moduleName=excelFileUtil.getCellValue(readtsusheet,MODULE_COUNT,1);
 				    	moduleResultFolder = moduleName+"_"+uc;
 				    	moduleResultFolder = moduleResultFolder.replaceAll(" ","");
-						String modulepath = excelFileUtil.htmlRep+"\\"+moduleResultFolder;
-						scrshtPath = modulepath+"\\"+"ScreenShots";
+						String modulepath = excelFileUtil.htmlRep+File.separator+moduleResultFolder;
+						scrshtPath = modulepath+File.separator+"ScreenShots";
 						excelFileUtil.createFolder(modulepath);
 						excelFileUtil.createFolder(scrshtPath);
 						setUp(modulepath);
@@ -97,7 +98,7 @@ public class TestExecutor extends FunctionalLibrary{
 			strModuleName = moduleName;
 			//createUpdateExcel(moduleName,uc);
 			seleniumHandler.testcaseCounter=1;
-			testModulePath =  excelFileUtil.testModuleContainerPath +"\\"+ strModuleName + ".xls";
+			testModulePath =  excelFileUtil.testModuleContainerPath +File.separator+ strModuleName + ".xls";
 			
 			System.out.println("                                                ");
 			System.out.println(" >>>>> TestInfo : Test Execution Started <<<<<<<");
@@ -214,7 +215,13 @@ public class TestExecutor extends FunctionalLibrary{
 			    			    
 			    			    validate1 = "";
 			    			   
-			    			    testStep(seleniumHandler, reportLib);		    			 
+			    			    testStep(seleniumHandler, reportLib);
+			    			    
+			    			    {
+			    			    	if(TC_VAR == 0){
+			    			    		loopStartRow=seleniumHandler.endRow;
+			    			    	}
+			    			    }
 			    			    
 			    			    loopStartRow = loopStartRow+1;
 			    		    }		    			 
@@ -239,6 +246,9 @@ public class TestExecutor extends FunctionalLibrary{
 			    			 //Passing empty validate value so that existing value must not written for any exception in next validate statement.
 		    			    reportLib.validate1 = "";
 			    			testStep(seleniumHandler, reportLib);
+			    			if(TC_VAR == 0){
+			    				i=teststepcount+1;
+	    			    	}
 				            seleniumHandler.currTestRowPtr = seleniumHandler.currTestRowPtr+1;
 			    		 }	     
 			    }

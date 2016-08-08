@@ -50,7 +50,7 @@ public class DriverClassTest extends FunctionalLibrary {
 		}
 
 		rvg = "";
-		String JTESTEXL = "SeleniumFramework\\Test_Excel\\Tester.xls";
+		String JTESTEXL = "SeleniumFramework"+File.separator+"Test_Excel"+File.separator+"Tester.xls";
 		fileOut = new FileOutputStream(JTESTEXL);
 		workbook = new HSSFWorkbook();
 		worksheet = workbook.createSheet("TestResult");
@@ -60,18 +60,18 @@ public class DriverClassTest extends FunctionalLibrary {
 		Date now = new Date();
 		zipdate = DateFormat.getDateTimeInstance().format(now).toString();
 		zipdate = zipdate.replaceAll(":", "_");
-		File zipfolder = new File("SeleniumFramework\\TestExecutionZip_Reports");
+		File zipfolder = new File("SeleniumFramework"+File.separator+"TestExecutionZip_Reports");
 		if (!zipfolder.exists()) {
 			zipfolder.mkdir();
 		}
 
-		reportzip = "SeleniumFramework\\TestExecutionZip_Reports\\" + excelFileUtil.result_backup_name + "_" + zipdate
+		reportzip = "SeleniumFramework"+File.separator+"TestExecutionZip_Reports"+File.separator+"" + excelFileUtil.result_backup_name + "_" + zipdate
 				+ ".zip";
 		excelFileUtil.zipDir(reportzip, excelFileUtil.htmlRep, zipdate);
 
 		System.out.println("Total Testcases Executed: " + totalTCount);
 		System.out.println("Failed Test Cases: " + failedTCount);
-		File deldr = new File("SeleniumFramework\\Test_Reports\\Test_Reports_" + zipdate);
+		File deldr = new File("SeleniumFramework"+File.separator+"Test_Reports"+File.separator+"Test_Reports_" + zipdate);
 		excelFileUtil.deleteDir(deldr);
 
 		workbook.write(fileOut);
@@ -130,7 +130,7 @@ public class DriverClassTest extends FunctionalLibrary {
 
 		if (excelFileUtil.environment.equalsIgnoreCase("Desktop_Web")) {
 			String ss;
-			ss = "SeleniumFramework\\lib\\chromedriver.exe";
+			ss = "SeleniumFramework"+File.separator+"lib"+File.separator+"chromedriver.exe";
 			System.out.println("SS: " + ss);
 			System.setProperty("webdriver.chrome.driver", ss);
 			System.setProperty(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY, ss);
@@ -228,7 +228,7 @@ public class DriverClassTest extends FunctionalLibrary {
 	private void executeForIEExplorer() throws Exception {
 		excelFileUtil.platform = "IExplorer";
 		tmpPlatform = excelFileUtil.platform;
-		String ss = new File("SeleniumFramework\\lib\\IEDriverServer.exe").getCanonicalPath();
+		String ss = new File("SeleniumFramework"+File.separator+"lib"+File.separator+"IEDriverServer.exe").getCanonicalPath();
 		System.setProperty("webdriver.ie.driver", ss);
 		DesiredCapabilities capab = DesiredCapabilities.internetExplorer();
 		capab.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
@@ -283,7 +283,17 @@ public class DriverClassTest extends FunctionalLibrary {
 		// System.out.println(System.getenv("SELENIUM_PLATFORM"));
 		// System.out.println(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
 		JSONParser parser = new JSONParser();
-		JSONArray ja = (JSONArray) parser.parse(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
+		String browswerString = "";
+		if(System.getenv("SAUCE_ONDEMAND_BROWSERS")==null){
+			System.out.println("####### SAUCE BROWSER NULL ########");
+			System.out.println("########### Running on Firefox 48, Windows ###########");
+			browswerString = "[{\"os\":\"Windows 2008\",\"platform\":\"VISTA\",\"browser\":\"firefox\",\"browser-version\":\"44\",\"long-name\":\"Firefox\","
+					+ "\"long-version\":\"44.0.\"}]"; 
+		} else {
+			browswerString = System.getenv("SAUCE_ONDEMAND_BROWSERS");
+		}
+		
+		JSONArray ja = (JSONArray) parser.parse(browswerString);
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 		JSONObject js = null;
 		for (Object object : ja) {
@@ -318,8 +328,8 @@ public class DriverClassTest extends FunctionalLibrary {
 			rv = "Sauce_" + rv.replaceAll("\\s+", "").split("MSIE")[1].split(";")[0];
 
 		} catch (Exception e) {
-			rv = "Sauce";
-			rvg = "Sauce";
+			rv = desiredCapabilities.getBrowserName();
+			rvg = desiredCapabilities.getBrowserName();
 		}
 		excelFileUtil.tmpBrowserVer = rv;
 		PREVIOUS_TEST_CASE = "Before Test Execution";
