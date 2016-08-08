@@ -52,10 +52,10 @@ public class ExcelFileUtil {
 	}
 
 	private void loadSeleniumUtilityFile() {
-		String utilityFilePath = "SeleniumFramework\\Test_Utility\\Selenium_Utility.xls";
+		String utilityFilePath = "SeleniumFramework"+File.separator+"Test_Utility"+File.separator+"Selenium_Utility.xls";
 //		C:\MV_ASK_Framework\SeleniumWebAutomationFramework\Selenium_Framework\SeleniumFramework\Test_Utility\Application_Config.xls
 		String ApputilityFilePath =
-				"SeleniumFramework\\Test_Utility\\Application_Config.xls";
+				"SeleniumFramework"+File.separator+"Test_Utility"+File.separator+"Application_Config.xls";
 //				"SeleniumWebAutomationFramework\\Selenium_Framework\\SeleniumFramework\\Test_Utility\\Application_Config.xls";
 //				ExcelFileUtil.class.getClassLoader().getResource("SeleniumWebAutomationFramework\\Selenium_Framework\\SeleniumFramework\\Test_Utility\\Application_Config.xls").getPath();
 //		FileSystems.getDefault().getPath(System.getProperty("user.home"), "Test_Utility", "Application_Config.xls").toString();
@@ -82,18 +82,18 @@ public class ExcelFileUtil {
 		suPassword = getCellValue(SU_Credentials, 1, 1);
 		
 		System.out.println("Check path for files:");
-		testSuite = new File(getCellValue(readsheet,1,1)).getCanonicalPath();
+		testSuite = new File(getCellValue(readsheet,1,1).replace("\\", File.separator)).getCanonicalPath();
 		System.out.println(testSuite);
-		testModuleContainerPath = new File(getCellValue(readsheet,2,1)).getCanonicalPath();
+		testModuleContainerPath = new File(getCellValue(readsheet,2,1).replace("\\", File.separator)).getCanonicalPath();
 		System.out.println(testModuleContainerPath);
-		elementCollection = new File(getCellValue(readsheet,3,1)).getCanonicalPath();
+		elementCollection = new File(getCellValue(readsheet,3,1).replace("\\", File.separator)).getCanonicalPath();
 		System.out.println(elementCollection);
 		environment = getCellValue(readsheet,4,1);
-		htmlRep= new File(getCellValue(readsheet, 5,1)).getCanonicalPath();	     
+		htmlRep= new File(getCellValue(readsheet, 5,1).replace("\\", File.separator)).getCanonicalPath();	     
 	    System.out.println(htmlRep);
-	    screenShots = new File(getCellValue(readsheet,6,1)).getCanonicalPath();
+	    screenShots = new File(getCellValue(readsheet,6,1).replace("\\", File.separator)).getCanonicalPath();
 	    updateQC = getCellValue(readsheet,7,1);
-	    uaStrings = new File(getCellValue(readsheet, 9,1)).getCanonicalPath();
+	    uaStrings = new File(getCellValue(readsheet, 9,1).replace("\\", File.separator)).getCanonicalPath();
 		System.out.println(uaStrings);
 	    
 	    
@@ -187,12 +187,12 @@ try{
 
 		System.out.println("Source Result Path: " + dir);		
 		File sourceLocation = new File(dir); 
-		File targetLocation = new File("SeleniumFramework\\Test_Reports_"+ zipDate);
+		File targetLocation = new File("SeleniumFramework"+File.separator+"Test_Reports_"+ zipDate);
 		copyflag = copyDirectory(sourceLocation,targetLocation);
 		Thread.sleep(2000);
 		if(copyflag) 
 		{
-			dir = "SeleniumFramework\\Test_Reports_" + zipDate;
+			dir = "SeleniumFramework"+File.separator+"Test_Reports_" + zipDate;
 		}
 		File f = new File(zipFileName);
 		boolean exists = f.exists();
