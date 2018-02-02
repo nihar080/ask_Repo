@@ -185,7 +185,7 @@ public class FunctionalLibrary extends ReportLibrary {
 																				// Verification
 																				// Keywords
 
-		ClosewindowByTitle, CloseBrowser, SwitchToWindow, VerifywindowTitle, // Window
+		ClosewindowByTitle, CloseBrowser, SwitchToWindow, VerifywindowTitle, clickLinkUsingDisplayName,// Window
 																				// and
 																				// Browser
 																				// Related
@@ -323,6 +323,9 @@ public class FunctionalLibrary extends ReportLibrary {
 				funHoldvalue(feType, objName, fValue);
 				break;
 
+			case clickLinkUsingDisplayName:
+				clickLinkByName(fValue);
+				break;
 			case SendelementValue:
 				funSendValue(feType, objName, fValue);
 				break;
@@ -1112,7 +1115,7 @@ public class FunctionalLibrary extends ReportLibrary {
 
 		funBrowserclose();
 		driver.get(fValue_tmp);
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Thread.sleep(synctime);
 		Thread.sleep(synctime);
@@ -1454,7 +1457,7 @@ public class FunctionalLibrary extends ReportLibrary {
 		if (excelFileUtil.platform.contains("Explorer")) {
 
 			try {
-				Runtime.getRuntime().exec("taskkill /F /IM iexplore.exe");
+				Runtime.getRuntime().exec("taskkill /F /IM WINWORD.exe");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -1707,6 +1710,22 @@ public class FunctionalLibrary extends ReportLibrary {
 		element.click();
 	}
 
+	public static void clickLinkByName(String favlue){
+		List<WebElement> elements=driver.findElements(By.xpath(".//table[@id='tblltrlist']//tr/td/span/a"));
+		for(WebElement element:elements){
+			String expval= element.getText().trim();
+			System.out.println(expval);
+			if(expval.equals(favlue.trim())){
+				element.click();
+				break;
+			}
+			else{
+				
+			}
+		}
+		
+	}
+	
 	public static void funmouseHoverClick(String feType, String objName, String fValue) throws InterruptedException {
 		WebElement element;
 		element = funcFindElement(feType, objName);

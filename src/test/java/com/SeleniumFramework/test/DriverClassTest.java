@@ -228,14 +228,14 @@ public class DriverClassTest extends FunctionalLibrary {
 	private void executeForIEExplorer() throws Exception {
 		excelFileUtil.platform = "IExplorer";
 		tmpPlatform = excelFileUtil.platform;
-		String ss = new File("SeleniumFramework"+File.separator+"lib"+File.separator+"IEDriverServer.exe").getCanonicalPath();
+		String ss = new File("lib"+File.separator+"IEDriverServer.exe").getCanonicalPath();
 		System.setProperty("webdriver.ie.driver", ss);
 		DesiredCapabilities capab = DesiredCapabilities.internetExplorer();
 		capab.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 		driver = new InternetExplorerDriver(capab);
+		driver.manage().window().maximize();
 		selenium = new com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium(driver, "http://www.google.com");
 		String rv = selenium.getEval("navigator.userAgent");
-
 		try {
 			if (rvg.equalsIgnoreCase("")) {
 				rvg = "IE" + rv.replaceAll("\\s+", "").split("MSIE")[1].split(";")[0];
@@ -252,7 +252,7 @@ public class DriverClassTest extends FunctionalLibrary {
 		excelFileUtil.tmpBrowserVer = rv;
 		PREVIOUS_TEST_CASE = "Before Test Execution";
 		Thread.sleep(5000);
-
+		
 		testExecutor.testSuite(moduleName, reportLib, seleniumHandler, rv); // Calls
 																			// testSuite
 																			// method
@@ -269,7 +269,7 @@ public class DriverClassTest extends FunctionalLibrary {
 		TEST_STEP_COUNT = 1;
 		failedStep = " ";
 		testcaseCounter = 0;
-
+		
 		driver.close();
 		driver.quit();
 	}
